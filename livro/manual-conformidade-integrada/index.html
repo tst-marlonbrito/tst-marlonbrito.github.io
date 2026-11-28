@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Manual Nacional de Conformidade Integrada: Interpretação Técnica das NRs + ISO 9001 e 45001 • Marlon Myaggy</title>
+    <meta name="description"
+        content="Guia prático e atualizado para excelência técnica, jurídica e operacional na aplicação das NRs no Brasil, integrado às normas ISO 9001 e ISO 45001." />
+    <link rel="canonical" href="https://tst-marlonbrito.github.io/livro/manual-conformidade-integrada/" />
+
+    <!-- Ícones e app instalável (PWA) -->
+    <link rel="icon" href="/static/icons/favicon.ico" sizes="48x48" />
+    <link rel="icon" href="/static/icons/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/static/icons/apple-touch-icon.png" />
+    <link rel="manifest" href="/static/manifest.webmanifest" />
+    <meta name="theme-color" content="#06231b" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Marlon Myaggy" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="application-name" content="Marlon Myaggy" />
+
+    <!-- Social (Open Graph / Twitter) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Manual Nacional de Conformidade Integrada: Interpretação Técnica das NRs + ISO 9001 e 45001" />
+    <meta property="og:description"
+        content="Portfólio profissional com entregas reais em SST e desenvolvimento." />
+    <meta property="og:url" content="https://tst-marlonbrito.github.io/livro/manual-conformidade-integrada/" />
+    <meta property="og:image" content="https://tst-marlonbrito.github.io/static/images/og-cover.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Manual Nacional de Conformidade Integrada: Interpretação Técnica das NRs + ISO 9001 e 45001" />
+    <meta name="twitter:description"
+        content="Portfólio profissional com entregas reais em SST e desenvolvimento." />
+    <meta name="twitter:image" content="https://tst-marlonbrito.github.io/static/images/og-cover.jpg" />
+
+    <!-- Tipografia própria (Lora + Inter), servida pelo próprio site: rápida e sem depender de terceiros -->
+    <link rel="preload" href="/static/fonts/site/Inter-Regular.woff" as="font" type="font/woff" crossorigin />
+    <link rel="preload" href="/static/fonts/site/Lora-Variable.woff" as="font" type="font/woff" crossorigin />
+
+    <!-- CSS externo (opcional). Se não existir, o bloco <style> abaixo garante o visual. -->
+    <link rel="stylesheet" href="/static/css/main.css?v=p1" />
+
+    
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Book", "author": {"@type": "Person", "name": "Marlon Brito"}, "description": "Guia pr\u00e1tico e atualizado para excel\u00eancia t\u00e9cnica, jur\u00eddica e operacional na aplica\u00e7\u00e3o das NRs no Brasil, integrado \u00e0s normas ISO 9001 e ISO 45001.", "image": "https://tst-marlonbrito.github.io/static/img/MCNLivro.jpg", "inLanguage": "pt-BR", "name": "Manual Nacional de Conformidade Integrada: Interpreta\u00e7\u00e3o T\u00e9cnica das NRs + ISO 9001 e 45001", "url": "https://tst-marlonbrito.github.io/livro/manual-conformidade-integrada"}
+</script>
+
+
+    <!-- Schema.org JSON-LD (Person) -->
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Marlon Myaggy",
+    "jobTitle": "Analista Técnico em Segurança do Trabalho e Desenvolvedor Full Stack",
+    "url": "https://tst-marlonbrito.github.io/",
+    "image": "https://tst-marlonbrito.github.io/static/img/Foto.jpg",
+    "sameAs": [
+      "https://www.linkedin.com/in/marlonmyaggy",
+      "https://github.com/TechAlly96"
+    ]
+  }
+  </script>
+
+    <!-- Fallback de estilos (mantém sua paleta e componentes essenciais) -->
+    <style>
+        :root {
+            --primaria: #003366;
+            --secundaria: #00AEEF;
+            --cinza: #f4f4f4;
+            --preto: #222;
+            --branco: #fff;
+            --sucesso: #dff0d8;
+            --sucesso-texto: #3c763d;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: clamp(15px, 0.6vw + 13px, 19px);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--cinza);
+            color: var(--preto);
+            font-size: 17px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* Acessibilidade */
+        .skip-to-content {
+            position: absolute;
+            left: -9999px;
+            top: auto;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+        }
+
+        .skip-to-content:focus {
+            left: 1rem;
+            top: 1rem;
+            width: auto;
+            height: auto;
+            padding: .5rem .75rem;
+            background: var(--secundaria);
+            color: var(--branco);
+            border-radius: 6px;
+            z-index: 1000;
+        }
+
+        header[role="banner"] {
+            background-color: var(--primaria);
+            padding: 0.5rem 0;
+            color: var(--branco);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, .1);
+        }
+
+        .navbar {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: .4rem;
+            padding: .3rem 0;
+        }
+
+        .brand {
+            color: var(--branco);
+            text-decoration: none;
+            font-size: 1.6rem;
+            font-weight: 700;
+            letter-spacing: .3px;
+        }
+
+        .brand span {
+            color: var(--secundaria);
+        }
+
+        .menu {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.6rem;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+        }
+
+        .menu a {
+            color: var(--branco);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: .95rem;
+            letter-spacing: .3px;
+            padding: .2rem 0;
+            border-bottom: 2px solid transparent;
+            opacity: .9;
+            transition: border-color .3s ease, opacity .3s ease;
+        }
+
+        .menu a:hover,
+        .menu a:focus {
+            border-bottom-color: var(--secundaria);
+            opacity: 1;
+            outline: none;
+        }
+
+        main {
+            padding: 2.5rem 0;
+            min-height: 70vh;
+        }
+
+        .card {
+            background: var(--branco);
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+            transition: transform 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+        }
+
+        .btn-secundaria {
+            background-color: var(--secundaria);
+            color: #fff;
+            padding: .7rem 1.4rem;
+            font-size: 1rem;
+            border: none;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background .3s ease;
+        }
+
+        .btn-secundaria:hover,
+        .btn-secundaria:focus {
+            background-color: #007bbd;
+            outline: none;
+        }
+
+        .flash-msg {
+            background: var(--sucesso);
+            color: var(--sucesso-texto);
+            padding: 1rem;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            background-color: var(--primaria);
+            color: var(--branco);
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: 3rem;
+            font-size: .95rem;
+        }
+
+        footer p {
+            margin: .4rem 0;
+            line-height: 1.4;
+        }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .menu {
+                gap: 1rem;
+            }
+
+            .menu a {
+                font-size: .85rem;
+            }
+
+            .brand {
+                font-size: 1.35rem;
+            }
+        }
+    </style>
+
+    <!-- Identidade premium (verde, dourado e creme): carregada por último, prevalece sobre o restante -->
+    <link rel="stylesheet" href="/static/css/premium.css?v=p1" />
+</head>
+
+<body>
+    <a class="skip-to-content" href="#conteudo">Pular para o conteúdo</a>
+
+    
+    <header role="banner" class="topo">
+        <div class="container navbar" role="navigation" aria-label="principal">
+            <a class="brand" href="/" aria-label="Marlon Myaggy, página inicial">
+                <img class="brand-escudo" src="/static/img/marca/escudo-96.webp" alt="" width="36" height="44">
+                <span class="brand-texto"><span class="brand-nome"><b>Marlon</b> <span>Myaggy</span></span><small>Segurança do Trabalho</small></span>
+            </a>
+            <ul id="menu" class="menu">
+                <li><a href="/">Início</a></li>
+                <li><a href="/projetos/">Projetos</a></li>
+                <li><a href="/artigos/">Artigos</a></li>
+                <li><a href="/livros/" aria-current="page">Livros</a></li>
+                <li><a class="menu-cta" href="/#contato">Contato</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main id="conteudo" class="container" role="main">
+        
+        
+        
+        
+
+
+<section class="proj-wrap">
+  <div class="container">
+
+    <!-- HERO: capa ao lado do conteúdo -->
+    <header class="proj-hero card">
+      <img class="proj-cover" src="/static/img/MCNLivro.jpg"
+        alt="Capa do livro Manual Nacional de Conformidade Integrada: Interpretação Técnica das NRs + ISO 9001 e 45001" width="280" height="420" loading="eager">
+
+      <div class="proj-head">
+        <h1 class="proj-title">Manual Nacional de Conformidade Integrada: Interpretação Técnica das NRs + ISO 9001 e 45001</h1>
+        <p class="proj-sub">Guia prático e atualizado para excelência técnica, jurídica e operacional na aplicação das NRs no Brasil, integrado às normas ISO 9001 e ISO 45001.</p>
+
+        <div class="cta-row">
+          <a class="btn" href="https://www.amazon.com.br/Manual-Nacional-Conformidade-Integrada-Interpreta%C3%A7%C3%A3o-ebook/dp/B0FHCSP997" target="_blank" rel="noopener noreferrer external nofollow">
+            🛒 Comprar agora
+          </a>
+          
+        </div>
+
+        <small class="trust-badge">
+          Pagamento seguro na Amazon • acesso imediato
+        </small>
+      </div>
+    </header>
+
+    
+    <div class="card" style="margin-top:1rem">
+      <h2 class="proj-h3">Vídeo de apresentação</h2>
+      <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:10px">
+        <iframe src="https://www.youtube.com/embed/IElc_wK3uFI"
+          style="position:absolute; top:0; left:0; width:100%; height:100%; border:0"
+          allowfullscreen loading="lazy" title="Vídeo de apresentação do livro Manual Nacional de Conformidade Integrada: Interpretação Técnica das NRs + ISO 9001 e 45001"></iframe>
+      </div>
+    </div>
+    
+
+    <!-- Conteúdo -->
+    <div class="proj-grid-2" style="margin-top:1rem">
+      <article class="card" aria-labelledby="por-que">
+        <h2 id="por-que" class="proj-h3">Por que ler este livro?</h2>
+        <p>O Manual Nacional de Conformidade Integrada consolida interpretação técnica das Normas Regulamentadoras (NRs) com práticas de gestão da qualidade (ISO 9001) e segurança e saúde ocupacional (ISO 45001). Ideal para profissionais, gestores e auditores que buscam padronizar processos, elevar a governança e ganhar eficiência comprovável em auditorias.</p>
+        
+        <ul class="proj-bullets">
+          <li>Interpretação técnica e prática das principais NRs</li><li>Modelos de checklists, formulários, planos e inventários</li><li>Estruturação completa de PGR, GRO, PCMSO, SESMT e atualizações</li><li>Integração com SGQ (ISO 9001) e SSO (ISO 45001)</li><li>Estratégias para auditorias, certificações e governança</li>
+        </ul>
+        
+      </article>
+
+      <aside class="card" aria-labelledby="especificacoes">
+        <h2 id="especificacoes" class="proj-h3">Especificações</h2>
+        <dl class="specs-grid">
+          
+          
+          <dt>Formato</dt>
+          <dd>eBook Kindle</dd>
+          
+          <dt>Idioma</dt>
+          <dd>Português</dd>
+          
+          <dt>Abrangência</dt>
+          <dd>NRs (Brasil), ISO 9001, ISO 45001</dd>
+          
+          
+        </dl>
+        <div style="margin-top:.75rem">
+          <a class="btn" href="https://www.amazon.com.br/Manual-Nacional-Conformidade-Integrada-Interpreta%C3%A7%C3%A3o-ebook/dp/B0FHCSP997" target="_blank" rel="noopener noreferrer external nofollow">Comprar</a>
+          <a class="btn-link" href="/livros/">⬅ Voltar aos livros</a>
+        </div>
+      </aside>
+    </div>
+
+    <!-- Sobre o autor -->
+    <section class="card" style="margin-top:1rem">
+      <h2 class="proj-h3">Sobre o autor</h2>
+      <p>
+        Sou <strong>Marlon Brito</strong>, Analista Técnico em Segurança do Trabalho e
+        Desenvolvedor Full Stack especialista em SST. Com vivência de campo em mineração,
+        pesquisa mineral e construção civil, escrevo para transformar a norma em prática:
+        o que fazer, como fazer e como comprovar, porque cada procedimento correto protege uma vida.
+      </p>
+    </section>
+
+  </div>
+</section>
+
+    </main>
+
+    
+
+    <footer role="contentinfo" class="rodape-site">
+        <div class="container rodape-grade">
+            <div class="rodape-marca">
+                <img src="/static/img/marca/escudo-96.webp" alt="" width="40" height="49" loading="lazy">
+                <p><strong>Marlon <span>Myaggy</span></strong><small>Segurança do Trabalho · Sistemas sob medida</small></p>
+            </div>
+            <nav class="rodape-links" aria-label="Rodapé">
+                <a href="/projetos/">Projetos</a>
+                <a href="/artigos/">Artigos</a>
+                <a href="/livros/">Livros</a>
+                <a href="/?orcamento=geral#contato">Solicitar orçamento</a>
+            </nav>
+            <p class="rodape-chamada">Artigos técnicos toda segunda-feira<small>gratuitos · leitura e áudio no site</small></p>
+        </div>
+        <div class="container rodape-base">
+            <p>© <span id="year"></span> Marlon Myaggy. Todos os direitos reservados.</p>
+            <button type="button" id="btn-instalar" class="btn-instalar" hidden>
+                <img src="/static/icons/icon-192.png" alt="" width="22" height="22"> Instalar app
+            </button>
+        </div>
+    </footer>
+
+    <!-- JS básico para ano no rodapé -->
+    <script>
+        (function () {
+            var y = document.getElementById('year');
+            if (y) y.textContent = new Date().getFullYear();
+        })();
+    </script>
+
+    <!-- PWA: service worker + botão "Instalar app" (só aparece quando o navegador permite) -->
+    <script>
+        (function () {
+            if ('serviceWorker' in navigator) {
+                window.addEventListener('load', function () {
+                    navigator.serviceWorker.register('/sw.js', { scope: '/' }).catch(function () {});
+                });
+            }
+            var pedido = null, btn = document.getElementById('btn-instalar');
+            window.addEventListener('beforeinstallprompt', function (e) {
+                e.preventDefault(); pedido = e; if (btn) btn.hidden = false;
+            });
+            if (btn) btn.addEventListener('click', function () {
+                if (!pedido) return;
+                pedido.prompt();
+                pedido.userChoice.finally(function () { pedido = null; btn.hidden = true; });
+            });
+            window.addEventListener('appinstalled', function () { if (btn) btn.hidden = true; });
+        })();
+    </script>
+    
+<script>window.MM_ESTATICO={"base": "", "form": "", "email": "tst.marlonbrito@gmail.com", "linkedin": "https://www.linkedin.com/in/marlonmyaggy", "orcamentos": {"gestao_sst": "Olá, Marlon! Tenho interesse em um orçamento para: Sistema de Gestão SST.\n\nEmpresa:\nRamo de atividade:\nTamanho (colaboradores ou veículos):\nO que preciso controlar:\nTelefone/WhatsApp:", "checklist_pwa": "Olá, Marlon! Tenho interesse em um orçamento para: Gestão de Frota (checklist veicular + controle de combustível).\n\nEmpresa:\nRamo de atividade:\nTamanho (colaboradores ou veículos):\nO que preciso controlar:\nTelefone/WhatsApp:", "dashboard_3d": "Olá, Marlon! Tenho interesse em um orçamento para: Dashboard de dados geológicos/de campo (Inteligência Geológica).\n\nEmpresa:\nRamo de atividade:\nTamanho (colaboradores ou veículos):\nO que preciso controlar:\nTelefone/WhatsApp:", "sites_ongs": "Olá, Marlon! Tenho interesse em um orçamento para: Site para ONG/associação (portal, loja virtual e doações).\n\nEmpresa:\nRamo de atividade:\nTamanho (colaboradores ou veículos):\nO que preciso controlar:\nTelefone/WhatsApp:", "geral": "Olá, Marlon! Gostaria de um orçamento para um sistema sob medida.\n\nEmpresa:\nO que preciso resolver:\nTelefone/WhatsApp:"}};</script>
+<script src="/static/js/estatico.js?v=1" defer></script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "9190da19987f438aa912c3545b19a63b"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+
+</html>

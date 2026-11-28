@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://tst-marlonbrito.github.io/sitemap.xml

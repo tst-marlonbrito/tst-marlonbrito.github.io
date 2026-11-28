@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Sites para ONGs e Associações: portal, loja virtual e doações • Marlon Myaggy</title>
+    <meta name="description"
+        content="Criação de sites para ONGs, associações e projetos sociais: portal institucional, loja virtual, doações online com recibo, transparência e painel administrativo. Case real: ASSIPROV+. Solicite um orçamento." />
+    <link rel="canonical" href="https://tst-marlonbrito.github.io/projeto/sites_ongs/" />
+
+    <!-- Ícones e app instalável (PWA) -->
+    <link rel="icon" href="/static/icons/favicon.ico" sizes="48x48" />
+    <link rel="icon" href="/static/icons/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/static/icons/apple-touch-icon.png" />
+    <link rel="manifest" href="/static/manifest.webmanifest" />
+    <meta name="theme-color" content="#06231b" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Marlon Myaggy" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="application-name" content="Marlon Myaggy" />
+
+    <!-- Social (Open Graph / Twitter) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Marlon Myaggy — Portfólio" />
+    <meta property="og:description"
+        content="Portfólio profissional com entregas reais em SST e desenvolvimento." />
+    <meta property="og:url" content="https://tst-marlonbrito.github.io/projeto/sites_ongs/" />
+    <meta property="og:image" content="https://tst-marlonbrito.github.io/static/images/og-cover.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Marlon Myaggy — Portfólio" />
+    <meta name="twitter:description"
+        content="Portfólio profissional com entregas reais em SST e desenvolvimento." />
+    <meta name="twitter:image" content="https://tst-marlonbrito.github.io/static/images/og-cover.jpg" />
+
+    <!-- Tipografia própria (Lora + Inter), servida pelo próprio site: rápida e sem depender de terceiros -->
+    <link rel="preload" href="/static/fonts/site/Inter-Regular.woff" as="font" type="font/woff" crossorigin />
+    <link rel="preload" href="/static/fonts/site/Lora-Variable.woff" as="font" type="font/woff" crossorigin />
+
+    <!-- CSS externo (opcional). Se não existir, o bloco <style> abaixo garante o visual. -->
+    <link rel="stylesheet" href="/static/css/main.css?v=p1" />
+
+    
+
+    <!-- Schema.org JSON-LD (Person) -->
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Marlon Myaggy",
+    "jobTitle": "Analista Técnico em Segurança do Trabalho e Desenvolvedor Full Stack",
+    "url": "https://tst-marlonbrito.github.io/",
+    "image": "https://tst-marlonbrito.github.io/static/img/Foto.jpg",
+    "sameAs": [
+      "https://www.linkedin.com/in/marlonmyaggy",
+      "https://github.com/TechAlly96"
+    ]
+  }
+  </script>
+
+    <!-- Fallback de estilos (mantém sua paleta e componentes essenciais) -->
+    <style>
+        :root {
+            --primaria: #003366;
+            --secundaria: #00AEEF;
+            --cinza: #f4f4f4;
+            --preto: #222;
+            --branco: #fff;
+            --sucesso: #dff0d8;
+            --sucesso-texto: #3c763d;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: clamp(15px, 0.6vw + 13px, 19px);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--cinza);
+            color: var(--preto);
+            font-size: 17px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* Acessibilidade */
+        .skip-to-content {
+            position: absolute;
+            left: -9999px;
+            top: auto;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+        }
+
+        .skip-to-content:focus {
+            left: 1rem;
+            top: 1rem;
+            width: auto;
+            height: auto;
+            padding: .5rem .75rem;
+            background: var(--secundaria);
+            color: var(--branco);
+            border-radius: 6px;
+            z-index: 1000;
+        }
+
+        header[role="banner"] {
+            background-color: var(--primaria);
+            padding: 0.5rem 0;
+            color: var(--branco);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, .1);
+        }
+
+        .navbar {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: .4rem;
+            padding: .3rem 0;
+        }
+
+        .brand {
+            color: var(--branco);
+            text-decoration: none;
+            font-size: 1.6rem;
+            font-weight: 700;
+            letter-spacing: .3px;
+        }
+
+        .brand span {
+            color: var(--secundaria);
+        }
+
+        .menu {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.6rem;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+        }
+
+        .menu a {
+            color: var(--branco);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: .95rem;
+            letter-spacing: .3px;
+            padding: .2rem 0;
+            border-bottom: 2px solid transparent;
+            opacity: .9;
+            transition: border-color .3s ease, opacity .3s ease;
+        }
+
+        .menu a:hover,
+        .menu a:focus {
+            border-bottom-color: var(--secundaria);
+            opacity: 1;
+            outline: none;
+        }
+
+        main {
+            padding: 2.5rem 0;
+            min-height: 70vh;
+        }
+
+        .card {
+            background: var(--branco);
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+            transition: transform 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+        }
+
+        .btn-secundaria {
+            background-color: var(--secundaria);
+            color: #fff;
+            padding: .7rem 1.4rem;
+            font-size: 1rem;
+            border: none;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background .3s ease;
+        }
+
+        .btn-secundaria:hover,
+        .btn-secundaria:focus {
+            background-color: #007bbd;
+            outline: none;
+        }
+
+        .flash-msg {
+            background: var(--sucesso);
+            color: var(--sucesso-texto);
+            padding: 1rem;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            background-color: var(--primaria);
+            color: var(--branco);
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: 3rem;
+            font-size: .95rem;
+        }
+
+        footer p {
+            margin: .4rem 0;
+            line-height: 1.4;
+        }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .menu {
+                gap: 1rem;
+            }
+
+            .menu a {
+                font-size: .85rem;
+            }
+
+            .brand {
+                font-size: 1.35rem;
+            }
+        }
+    </style>
+
+    <!-- Identidade premium (verde, dourado e creme): carregada por último, prevalece sobre o restante -->
+    <link rel="stylesheet" href="/static/css/premium.css?v=p1" />
+</head>
+
+<body>
+    <a class="skip-to-content" href="#conteudo">Pular para o conteúdo</a>
+
+    
+    <header role="banner" class="topo">
+        <div class="container navbar" role="navigation" aria-label="principal">
+            <a class="brand" href="/" aria-label="Marlon Myaggy, página inicial">
+                <img class="brand-escudo" src="/static/img/marca/escudo-96.webp" alt="" width="36" height="44">
+                <span class="brand-texto"><span class="brand-nome"><b>Marlon</b> <span>Myaggy</span></span><small>Segurança do Trabalho</small></span>
+            </a>
+            <ul id="menu" class="menu">
+                <li><a href="/">Início</a></li>
+                <li><a href="/projetos/" aria-current="page">Projetos</a></li>
+                <li><a href="/artigos/">Artigos</a></li>
+                <li><a href="/livros/">Livros</a></li>
+                <li><a class="menu-cta" href="/#contato">Contato</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main id="conteudo" class="container" role="main">
+        
+        
+        
+        
+
+<section class="proj-wrap sst-page">
+    <div class="container">
+
+        <!-- HERO -->
+        <header class="proj-hero card">
+            <div class="proj-media">
+                <img class="proj-cover" src="/static/img/ongs_capa.jpg"
+                     alt="Exemplo de site para ONG com botão de doação, meta do mês e loja de artesanato"
+                     width="1600" height="900" loading="eager">
+            </div>
+
+            <div class="proj-head">
+                <span class="sst-eyebrow">Para ONGs, associações e projetos sociais</span>
+                <h1 class="proj-title">Sites para ONGs</h1>
+                <p class="proj-sub">
+                    Um site completo para a sua causa: <strong>portal institucional</strong>,
+                    <strong>loja virtual</strong> e <strong>doações online</strong>, com prestação de contas
+                    transparente para quem apoia.
+                </p>
+                <p class="proj-sub">
+                    Você conta a sua história, recebe doações e vende produtos da comunidade em um só lugar,
+                    e administra tudo sozinho por um painel simples.
+                </p>
+                <div class="cta-row">
+                    <a class="btn" href="/?orcamento=sites_ongs#contato">Solicitar orçamento</a>
+                    <a class="btn-link" href="/projetos/">⬅ Voltar aos projetos</a>
+                </div>
+            </div>
+        </header>
+
+        <!-- PARA QUEM -->
+        <section class="card" style="margin-top:1rem" aria-labelledby="quem">
+            <h2 id="quem" class="proj-h3">Feito para</h2>
+            <p class="chips">
+                <span>🌿 ONGs ambientais</span>
+                <span>🪶 Associações indígenas e comunitárias</span>
+                <span>🤝 Projetos sociais</span>
+                <span>⛪ Igrejas e instituições religiosas</span>
+                <span>🧺 Cooperativas e artesãos</span>
+                <span>🐾 Proteção animal</span>
+            </p>
+        </section>
+
+        <!-- MÓDULOS -->
+        <section class="card" style="margin-top:1rem" aria-labelledby="modulos">
+            <h2 id="modulos" class="proj-h3">O que o seu site pode ter</h2>
+            <p class="ongs-intro">Você escolhe os módulos de acordo com a necessidade e o orçamento da instituição.</p>
+            <div class="ongs-mods">
+                <article><span>🏛️</span><h3>Portal institucional</h3><p>Quem somos, projetos, notícias, galeria de fotos e contato.</p></article>
+                <article><span>💝</span><h3>Doações online</h3><p>Doação única ou mensal, com pagamento seguro e recibo automático por e-mail.</p></article>
+                <article><span>🛍️</span><h3>Loja virtual</h3><p>Produtos com fotos, carrinho e pagamento online. O dinheiro vai direto para a conta da instituição.</p></article>
+                <article><span>📊</span><h3>Transparência</h3><p>Painel público mostrando quanto foi arrecadado e onde o recurso foi aplicado.</p></article>
+                <article><span>🎯</span><h3>Programa de pontos</h3><p>Quem compra ou doa ganha pontos para trocar por desconto. Apoiador fiel volta.</p></article>
+                <article><span>🔐</span><h3>Painel administrativo</h3><p>Cadastre produtos, acompanhe pedidos e doações e gerencie a equipe, sem programador.</p></article>
+                <article><span>🌎</span><h3>Bilíngue e SEO</h3><p>Português e inglês para alcançar apoiadores de fora, e otimizado para aparecer no Google.</p></article>
+                <article><span>📅</span><h3>Agendamentos e inscrições</h3><p>Lista de espera para visitas, eventos, voluntariado ou cursos.</p></article>
+            </div>
+        </section>
+
+        <!-- GALERIA -->
+        <section class="card" style="margin-top:1rem" aria-labelledby="galeria">
+            <h2 id="galeria" class="proj-h3">Exemplos de módulos</h2>
+            <div class="gallery-grid gallery-full">
+                <img src="/static/img/ongs_tela1.jpg" alt="Ilustração de loja virtual com produtos artesanais" width="1000" height="1100" loading="lazy">
+                <img src="/static/img/ongs_tela2.jpg" alt="Ilustração de página de doação com valores e opção mensal" width="1000" height="1100" loading="lazy">
+                <img src="/static/img/ongs_tela3.jpg" alt="Ilustração de painel de transparência com aplicação dos recursos" width="1000" height="1100" loading="lazy">
+            </div>
+            <p class="ongs-nota">Ilustrações dos módulos. Cores, textos e identidade visual seguem a marca da sua instituição.</p>
+        </section>
+
+        <!-- CASE -->
+        <section class="card sst-case" aria-labelledby="case">
+            <div class="sst-case-head">
+                <img src="/static/img/assiprov_portal.png" alt="Logotipo ASSIPROV+"
+                     width="96" height="96" loading="lazy">
+                <div>
+                    <span class="sst-eyebrow">Case real</span>
+                    <h2 id="case" class="proj-h3">ASSIPROV+: associação indígena Kayapó do Araguaia Paraense</h2>
+                </div>
+            </div>
+            <div class="sst-steps">
+                <article>
+                    <h3><span>1</span> Desafio</h3>
+                    <p>Dar visibilidade ao trabalho da associação, vender o artesanato da comunidade e receber doações
+                        de apoiadores de todo o Brasil e do exterior, com total transparência.</p>
+                </article>
+                <article>
+                    <h3><span>2</span> Solução</h3>
+                    <p>Portal bilíngue com loja de artesanato, doações com recibo, pagamento com repasse direto para a
+                        associação, painel de transparência em tempo real e programa de pontos.</p>
+                </article>
+                <article>
+                    <h3><span>3</span> Resultado</h3>
+                    <p>Uma vitrine profissional para a causa, com cada compra e doação registrada e prestação de
+                        contas pública que transmite confiança a quem apoia.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- COMO FUNCIONA -->
+        <section class="card" style="margin-top:1rem" aria-labelledby="como">
+            <h2 id="como" class="proj-h3">Como funciona</h2>
+            <ol class="ongs-passos">
+                <li><b>Conversa</b> Você me conta a história da instituição e o que precisa.</li>
+                <li><b>Proposta</b> Envio os módulos indicados e o orçamento, sem compromisso.</li>
+                <li><b>Desenvolvimento</b> Construo o site com a identidade visual da instituição e você acompanha.</li>
+                <li><b>Publicação</b> O site vai ao ar e a equipe recebe orientação para usar o painel.</li>
+            </ol>
+        </section>
+
+        <!-- ESPECIFICAÇÕES -->
+        <section class="card" style="margin-top:1rem" aria-labelledby="especificacoes">
+            <h2 id="especificacoes" class="proj-h3">Tecnologia usada no case</h2>
+            <dl class="specs-grid">
+                <dt>Base</dt>
+                <dd>Next.js com TypeScript, rápido e otimizado para o Google</dd>
+                <dt>Banco e arquivos</dt>
+                <dd>PostgreSQL (Supabase) e armazenamento de imagens</dd>
+                <dt>Pagamentos</dt>
+                <dd>Stripe Checkout e Stripe Connect, com repasse direto para a instituição</dd>
+                <dt>Acesso</dt>
+                <dd>Login com perfis de apoiador e administrador</dd>
+            </dl>
+        </section>
+
+        <!-- CTA FINAL -->
+        <section class="card sst-cta">
+            <h2>Sua instituição merece um site à altura da causa</h2>
+            <p>Conte o que a sua ONG faz e o que precisa no site. Eu explico como funciona e envio um orçamento sem compromisso.</p>
+            <div class="cta-row" style="justify-content:center">
+                <a class="btn" href="/?orcamento=sites_ongs#contato">Solicitar orçamento</a>
+                <a class="btn-link" href="/projetos/">⬅ Voltar aos projetos</a>
+            </div>
+        </section>
+
+    </div>
+</section>
+
+    </main>
+
+    
+
+    <footer role="contentinfo" class="rodape-site">
+        <div class="container rodape-grade">
+            <div class="rodape-marca">
+                <img src="/static/img/marca/escudo-96.webp" alt="" width="40" height="49" loading="lazy">
+                <p><strong>Marlon <span>Myaggy</span></strong><small>Segurança do Trabalho · Sistemas sob medida</small></p>
+            </div>
+            <nav class="rodape-links" aria-label="Rodapé">
+                <a href="/projetos/">Projetos</a>
+                <a href="/artigos/">Artigos</a>
+                <a href="/livros/">Livros</a>
+                <a href="/?orcamento=geral#contato">Solicitar orçamento</a>
+            </nav>
+            <p class="rodape-chamada">Artigos técnicos toda segunda-feira<small>gratuitos · leitura e áudio no site</small></p>
+        </div>
+        <div class="container rodape-base">
+            <p>© <span id="year"></span> Marlon Myaggy. Todos os direitos reservados.</p>
+            <button type="button" id="btn-instalar" class="btn-instalar" hidden>
+                <img src="/static/icons/icon-192.png" alt="" width="22" height="22"> Instalar app
+            </button>
+        </div>
+    </footer>
+
+    <!-- JS básico para ano no rodapé -->
+    <script>
+        (function () {
+            var y = document.getElementById('year');
+            if (y) y.textContent = new Date().getFullYear();
+        })();
+    </script>
+
+    <!-- PWA: service worker + botão "Instalar app" (só aparece quando o navegador permite) -->
+    <script>
+        (function () {
+            if ('serviceWorker' in navigator) {
+                window.addEventListener('load', function () {
+                    navigator.serviceWorker.register('/sw.js', { scope: '/' }).catch(function () {});
+                });
+            }
+            var pedido = null, btn = document.getElementById('btn-instalar');
+            window.addEventListener('beforeinstallprompt', function (e) {
+                e.preventDefault(); pedido = e; if (btn) btn.hidden = false;
+            });
+            if (btn) btn.addEventListener('click', function () {
+                if (!pedido) return;
+                pedido.prompt();
+                pedido.userChoice.finally(function () { pedido = null; btn.hidden = true; });
+            });
+            window.addEventListener('appinstalled', function () { if (btn) btn.hidden = true; });
+        })();
+    </script>
+    
+<script>window.MM_ESTATICO={"base": "", "form": "", "email": "tst.marlonbrito@gmail.com", "linkedin": "https://www.linkedin.com/in/marlonmyaggy", "orcamentos": {"gestao_sst": "Olá, Marlon! Tenho interesse em um orçamento para: Sistema de Gestão SST.\n\nEmpresa:\nRamo de atividade:\nTamanho (colaboradores ou veículos):\nO que preciso controlar:\nTelefone/WhatsApp:", "checklist_pwa": "Olá, Marlon! Tenho interesse em um orçamento para: Gestão de Frota (checklist veicular + controle de combustível).\n\nEmpresa:\nRamo de atividade:\nTamanho (colaboradores ou veículos):\nO que preciso controlar:\nTelefone/WhatsApp:", "dashboard_3d": "Olá, Marlon! Tenho interesse em um orçamento para: Dashboard de dados geológicos/de campo (Inteligência Geológica).\n\nEmpresa:\nRamo de atividade:\nTamanho (colaboradores ou veículos):\nO que preciso controlar:\nTelefone/WhatsApp:", "sites_ongs": "Olá, Marlon! Tenho interesse em um orçamento para: Site para ONG/associação (portal, loja virtual e doações).\n\nEmpresa:\nRamo de atividade:\nTamanho (colaboradores ou veículos):\nO que preciso controlar:\nTelefone/WhatsApp:", "geral": "Olá, Marlon! Gostaria de um orçamento para um sistema sob medida.\n\nEmpresa:\nO que preciso resolver:\nTelefone/WhatsApp:"}};</script>
+<script src="/static/js/estatico.js?v=1" defer></script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "9190da19987f438aa912c3545b19a63b"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+
+</html>

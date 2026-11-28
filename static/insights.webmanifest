@@ -1,0 +1,33 @@
+{
+  "id": "/admin/insights",
+  "name": "MM Insights — Painel do site",
+  "short_name": "MM Insights",
+  "description": "Estatísticas, análises e saúde do site de Marlon Brito.",
+  "lang": "pt-BR",
+  "start_url": "/admin/insights?source=app",
+  "scope": "/admin/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#04121f",
+  "background_color": "#04121f",
+  "icons": [
+    {
+      "src": "/static/icons/insights-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/static/icons/insights-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/static/icons/insights-mask-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

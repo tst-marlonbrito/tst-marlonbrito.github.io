@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Inglês Acessível • Marlon Myaggy</title>
+    <meta name="description"
+        content="Curso de inglês profissional em áudio, do básico ao avançado, gratuito e de código aberto, feito para pessoas com deficiência visual: ouça, repita depois do bipe e fale." />
+    <link rel="canonical" href="https://tst-marlonbrito.github.io/projeto/ingles_acessivel/" />
+
+    <!-- Ícones e app instalável (PWA) -->
+    <link rel="icon" href="/static/icons/favicon.ico" sizes="48x48" />
+    <link rel="icon" href="/static/icons/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/static/icons/apple-touch-icon.png" />
+    <link rel="manifest" href="/static/manifest.webmanifest" />
+    <meta name="theme-color" content="#06231b" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Marlon Myaggy" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="application-name" content="Marlon Myaggy" />
+
+    <!-- Social (Open Graph / Twitter) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Marlon Myaggy — Portfólio" />
+    <meta property="og:description"
+        content="Portfólio profissional com entregas reais em SST e desenvolvimento." />
+    <meta property="og:url" content="https://tst-marlonbrito.github.io/projeto/ingles_acessivel/" />
+    <meta property="og:image" content="https://tst-marlonbrito.github.io/static/images/og-cover.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Marlon Myaggy — Portfólio" />
+    <meta name="twitter:description"
+        content="Portfólio profissional com entregas reais em SST e desenvolvimento." />
+    <meta name="twitter:image" content="https://tst-marlonbrito.github.io/static/images/og-cover.jpg" />
+
+    <!-- Tipografia própria (Lora + Inter), servida pelo próprio site: rápida e sem depender de terceiros -->
+    <link rel="preload" href="/static/fonts/site/Inter-Regular.woff" as="font" type="font/woff" crossorigin />
+    <link rel="preload" href="/static/fonts/site/Lora-Variable.woff" as="font" type="font/woff" crossorigin />
+
+    <!-- CSS externo (opcional). Se não existir, o bloco <style> abaixo garante o visual. -->
+    <link rel="stylesheet" href="/static/css/main.css?v=p1" />
+
+    
+
+    <!-- Schema.org JSON-LD (Person) -->
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Marlon Myaggy",
+    "jobTitle": "Analista Técnico em Segurança do Trabalho e Desenvolvedor Full Stack",
+    "url": "https://tst-marlonbrito.github.io/",
+    "image": "https://tst-marlonbrito.github.io/static/img/Foto.jpg",
+    "sameAs": [
+      "https://www.linkedin.com/in/marlonmyaggy",
+      "https://github.com/TechAlly96"
+    ]
+  }
+  </script>
+
+    <!-- Fallback de estilos (mantém sua paleta e componentes essenciais) -->
+    <style>
+        :root {
+            --primaria: #003366;
+            --secundaria: #00AEEF;
+            --cinza: #f4f4f4;
+            --preto: #222;
+            --branco: #fff;
+            --sucesso: #dff0d8;
+            --sucesso-texto: #3c763d;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: clamp(15px, 0.6vw + 13px, 19px);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--cinza);
+            color: var(--preto);
+            font-size: 17px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* Acessibilidade */
+        .skip-to-content {
+            position: absolute;
+            left: -9999px;
+            top: auto;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+        }
+
+        .skip-to-content:focus {
+            left: 1rem;
+            top: 1rem;
+            width: auto;
+            height: auto;
+            padding: .5rem .75rem;
+            background: var(--secundaria);
+            color: var(--branco);
+            border-radius: 6px;
+            z-index: 1000;
+        }
+
+        header[role="banner"] {
+            background-color: var(--primaria);
+            padding: 0.5rem 0;
+            color: var(--branco);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, .1);
+        }
+
+        .navbar {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: .4rem;
+            padding: .3rem 0;
+        }
+
+        .brand {
+            color: var(--branco);
+            text-decoration: none;
+            font-size: 1.6rem;
+            font-weight: 700;
+            letter-spacing: .3px;
+        }
+
+        .brand span {
+            color: var(--secundaria);
+        }
+
+        .menu {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.6rem;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+        }
+
+        .menu a {
+            color: var(--branco);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: .95rem;
+            letter-spacing: .3px;
+            padding: .2rem 0;
+            border-bottom: 2px solid transparent;
+            opacity: .9;
+            transition: border-color .3s ease, opacity .3s ease;
+        }
+
+        .menu a:hover,
+        .menu a:focus {
+            border-bottom-color: var(--secundaria);
+            opacity: 1;
+            outline: none;
+        }
+
+        main {
+            padding: 2.5rem 0;
+            min-height: 70vh;
+        }
+
+        .card {
+            background: var(--branco);
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+            transition: transform 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+        }
+
+        .btn-secundaria {
+            background-color: var(--secundaria);
+            color: #fff;
+            padding: .7rem 1.4rem;
+            font-size: 1rem;
+            border: none;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background .3s ease;
+        }
+
+        .btn-secundaria:hover,
+        .btn-secundaria:focus {
+            background-color: #007bbd;
+            outline: none;
+        }
+
+        .flash-msg {
+            background: var(--sucesso);
+            color: var(--sucesso-texto);
+            padding: 1rem;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            background-color: var(--primaria);
+            color: var(--branco);
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: 3rem;
+            font-size: .95rem;
+        }
+
+        footer p {
+            margin: .4rem 0;
+            line-height: 1.4;
+        }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .menu {
+                gap: 1rem;
+            }
+
+            .menu a {
+                font-size: .85rem;
+            }
+
+            .brand {
+                font-size: 1.35rem;
+            }
+        }
+    </style>
+
+    <!-- Identidade premium (verde, dourado e creme): carregada por último, prevalece sobre o restante -->
+    <link rel="stylesheet" href="/static/css/premium.css?v=p1" />
+</head>
+
+<body>
+    <a class="skip-to-content" href="#conteudo">Pular para o conteúdo</a>
+
+    
+    <header role="banner" class="topo">
+        <div class="container navbar" role="navigation" aria-label="principal">
+            <a class="brand" href="/" aria-label="Marlon Myaggy, página inicial">
+                <img class="brand-escudo" src="/static/img/marca/escudo-96.webp" alt="" width="36" height="44">
+                <span class="brand-texto"><span class="brand-nome"><b>Marlon</b> <span>Myaggy</span></span><small>Segurança do Trabalho</small></span>
+            </a>
+            <ul id="menu" class="menu">
+                <li><a href="/">Início</a></li>
+                <li><a href="/projetos/" aria-current="page">Projetos</a></li>
+                <li><a href="/artigos/">Artigos</a></li>
+                <li><a href="/livros/">Livros</a></li>
+                <li><a class="menu-cta" href="/#contato">Contato</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main id="conteudo" class="container" role="main">
+        
+        
+        
+        
+<section class="proj-wrap">
+    <div class="container">
+
+        <!-- HERO -->
+        <header class="proj-hero card">
+            <div class="proj-media">
+                <img class="proj-cover" src="/static/img/ingles_acessivel.png"
+                     alt="Inglês Acessível: curso de inglês profissional em áudio">
+            </div>
+
+            <div class="proj-head">
+                <h1 class="proj-title">🎧 Inglês Acessível</h1>
+                <p class="proj-sub">
+                    Olá! Eu sou Marlon Myaggy, desenvolvedor Full Stack. Depois do Enem Acessível e do Concurso Acessível, levei a mesma ideia para o <strong>inglês do trabalho</strong>: um curso <strong>em áudio, do básico ao avançado</strong>, pensado primeiro para quem tem deficiência visual. O método é o de uma criança aprendendo a falar: <strong>ouvir, repetir e falar</strong>. Cada frase toca devagar, depois com a tradução, depois na velocidade normal, e um bipe avisa que é a sua vez de falar em voz alta. Eu mesmo estudo por este curso para conduzir reuniões e chamadas com clientes em inglês.
+                </p>
+                <div class="cta-row">
+                    <a class="btn" href="https://techally96.github.io/ingles-acessivel/" target="_blank" rel="noopener">Abrir app</a>
+                    <a class="btn-link" href="/projetos/">⬅ Voltar aos projetos</a>
+                </div>
+            </div>
+        </header>
+
+        <!-- CONTEÚDO -->
+        <div class="proj-grid-2" style="margin-top:1rem">
+            <article class="card" aria-labelledby="recursos">
+                <h2 id="recursos" class="proj-h3">Funcionalidades em destaque</h2>
+                <ul class="proj-bullets">
+                    <li>🦮 Modo guiado, como um cão-guia: um toque e as aulas tocam em sequência, do básico ao avançado, e recomeçam no fim para revisar.</li>
+                    <li>🔔 Ouça e repita: cada frase vem devagar, com a tradução e na velocidade normal; depois toca um bipe e um silêncio do tamanho certo para você falar em voz alta.</li>
+                    <li>💼 Inglês de empresa: apresentações, conversa rápida, marcar reuniões, conduzir reuniões, atualização de status, problemas e soluções, explicar algo técnico, chamadas com clientes, apresentação de projetos, negociação, feedback e entrevista de emprego.</li>
+                    <li>🗣️ Três vozes: narrador em português e duas vozes nativas em inglês nos diálogos, para treinar o ouvido com conversas de verdade.</li>
+                    <li>🌍 Imersão no fim de cada nível: só inglês, sem tradução, como a criança que aprende ouvindo a família.</li>
+                    <li>🎯 Desafio: você ouve a frase em português, fala em inglês depois do bipe e confere a resposta.</li>
+                    <li>🌙 Toca com a tela apagada e em segundo plano, com controles na tela de bloqueio e no fone Bluetooth, e funciona sem internet depois de baixado.</li>
+                    <li>💚 100% gratuito, sem propaganda e sem cadastro, com código aberto para a comunidade usar e melhorar.</li>
+                </ul>
+            </article>
+
+            <aside class="card" aria-labelledby="especificacoes">
+                <h2 id="especificacoes" class="proj-h3">Especificações</h2>
+                <dl class="specs-grid">
+                    <dt>Tipo</dt>
+                    <dd>PWA (app web instalável), sem dependências</dd>
+                    <dt>Front-end</dt>
+                    <dd>HTML, CSS e JavaScript puros, service worker offline</dd>
+                    <dt>Voz</dt>
+                    <dd>Piper TTS (vozes neurais pt-BR e en-US) + FFmpeg/Opus</dd>
+                    <dt>Automação</dt>
+                    <dd>GitHub Actions: curso em JSON → roteiro com pausas para repetir → áudio com capítulos (um por frase)</dd>
+                    <dt>Hospedagem</dt>
+                    <dd>GitHub Pages — custo zero</dd>
+                    <dt>Conteúdo</dt>
+                    <dd>24 aulas em 3 níveis, 281 frases e 24 conversas, mais 3 imersões e 3 desafios</dd>
+                    <dt>Licença</dt>
+                    <dd>MIT — código aberto</dd>
+                    <dt>Acesso</dt>
+                    <dd><a class="btn-link" href="https://techally96.github.io/ingles-acessivel/" target="_blank" rel="noopener">Abrir app</a> · <a class="btn-link" href="https://github.com/TechAlly96/ingles-acessivel" target="_blank" rel="noopener">Código no GitHub</a></dd>
+                </dl>
+            </aside>
+        </div>
+
+        <div class="cta-row" style="margin-top:1rem; justify-content:center">
+            <a class="btn" href="https://techally96.github.io/ingles-acessivel/" target="_blank" rel="noopener">Abrir app</a>
+            <a class="btn-link" href="https://github.com/TechAlly96/ingles-acessivel" target="_blank" rel="noopener">Código no GitHub</a>
+            <a class="btn-link" href="/projetos/">⬅ Voltar aos projetos</a>
+        </div>
+
+    </div>
+</section>
+
+    </main>
+
+    
+
+    <footer role="contentinfo" class="rodape-site">
+        <div class="container rodape-grade">
+            <div class="rodape-marca">
+                <img src="/static/img/marca/escudo-96.webp" alt="" width="40" height="49" loading="lazy">
+                <p><strong>Marlon <span>Myaggy</span></strong><small>Segurança do Trabalho · Sistemas sob medida</small></p>
+            </div>
+            <nav class="rodape-links" aria-label="Rodapé">
+                <a href="/projetos/">Projetos</a>
+                <a href="/artigos/">Artigos</a>
+                <a href="/livros/">Livros</a>
+                <a href="/?orcamento=geral#contato">Solicitar orçamento</a>
+            </nav>
+            <p class="rodape-chamada">Artigos técnicos toda segunda-feira<small>gratuitos · leitura e áudio no site</small></p>
+        </div>
+        <div class="container rodape-base">
+            <p>© <span id="year"></span> Marlon Myaggy. Todos os direitos reservados.</p>
+            <button type="button" id="btn-instalar" class="btn-instalar" hidden>
+                <img src="/static/icons/icon-192.png" alt="" width="22" height="22"> Instalar app
+            </button>
+        </div>
+    </footer>
+
+    <!-- JS básico para ano no rodapé -->
+    <script>
+        (function () {
+            var y = document.getElementById('year');
+            if (y) y.textContent = new Date().getFullYear();
+        })();
+    </script>
+
+    <!-- PWA: service worker + botão "Instalar app" (só aparece quando o navegador permite) -->
+    <script>
+        (function () {
+            if ('serviceWorker' in navigator) {
+                window.addEventListener('load', function () {
+                    navigator.serviceWorker.register('/sw.js', { scope: '/' }).catch(function () {});
+                });
+            }
+            var pedido = null, btn = document.getElementById('btn-instalar');
+            window.addEventListener('beforeinstallprompt', function (e) {
+                e.preventDefault(); pedido = e; if (btn) btn.hidden = false;
+            });
+            if (btn) btn.addEventListener('click', function () {
+                if (!pedido) return;
+                pedido.prompt();
+                pedido.userChoice.finally(function () { pedido = null; btn.hidden = true; });
+            });
+            window.addEventListener('appinstalled', function () { if (btn) btn.hidden = true; });
+        })();
+    </script>
+    
+<script>window.MM_ESTATICO={"base": "", "form": "", "email": "tst.marlonbrito@gmail.com", "linkedin": "https://www.linkedin.com/in/marlonmyaggy", "orcamentos": {"gestao_sst": "Olá, Marlon! Tenho interesse em um orçamento para: Sistema de Gestão SST.\n\nEmpresa:\nRamo de atividade:\nTamanho (colaboradores ou veículos):\nO que preciso controlar:\nTelefone/WhatsApp:", "checklist_pwa": "Olá, Marlon! Tenho interesse em um orçamento para: Gestão de Frota (checklist veicular + controle de combustível).\n\nEmpresa:\nRamo de atividade:\nTamanho (colaboradores ou veículos):\nO que preciso controlar:\nTelefone/WhatsApp:", "dashboard_3d": "Olá, Marlon! Tenho interesse em um orçamento para: Dashboard de dados geológicos/de campo (Inteligência Geológica).\n\nEmpresa:\nRamo de atividade:\nTamanho (colaboradores ou veículos):\nO que preciso controlar:\nTelefone/WhatsApp:", "sites_ongs": "Olá, Marlon! Tenho interesse em um orçamento para: Site para ONG/associação (portal, loja virtual e doações).\n\nEmpresa:\nRamo de atividade:\nTamanho (colaboradores ou veículos):\nO que preciso controlar:\nTelefone/WhatsApp:", "geral": "Olá, Marlon! Gostaria de um orçamento para um sistema sob medida.\n\nEmpresa:\nO que preciso resolver:\nTelefone/WhatsApp:"}};</script>
+<script src="/static/js/estatico.js?v=1" defer></script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "9190da19987f438aa912c3545b19a63b"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+
+</html>

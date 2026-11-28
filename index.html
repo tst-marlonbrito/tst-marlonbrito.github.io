@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Marlon Brito — Analista Técnico em Segurança do Trabalho e Desenvolvedor Full Stack</title>
+    <meta name="description"
+        content="Analista Técnico em Segurança do Trabalho e Desenvolvedor Full Stack especialista em SST. Sistemas sob medida para empresas, mineração e ONGs: gestão de SST, frota, dashboards de campo e sites. Projetos, livros e contato." />
+    <link rel="canonical" href="https://tst-marlonbrito.github.io/" />
+
+    <!-- Ícones e app instalável (PWA) -->
+    <link rel="icon" href="/static/icons/favicon.ico" sizes="48x48" />
+    <link rel="icon" href="/static/icons/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/static/icons/apple-touch-icon.png" />
+    <link rel="manifest" href="/static/manifest.webmanifest" />
+    <meta name="theme-color" content="#06231b" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Marlon Myaggy" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="application-name" content="Marlon Myaggy" />
+
+    <!-- Social (Open Graph / Twitter) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Início" />
+    <meta property="og:description"
+        content="Portfólio profissional com entregas reais em SST e desenvolvimento." />
+    <meta property="og:url" content="https://tst-marlonbrito.github.io/" />
+    <meta property="og:image" content="https://tst-marlonbrito.github.io/static/images/og-cover.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Início" />
+    <meta name="twitter:description"
+        content="Portfólio profissional com entregas reais em SST e desenvolvimento." />
+    <meta name="twitter:image" content="https://tst-marlonbrito.github.io/static/images/og-cover.jpg" />
+
+    <!-- Tipografia própria (Lora + Inter), servida pelo próprio site: rápida e sem depender de terceiros -->
+    <link rel="preload" href="/static/fonts/site/Inter-Regular.woff" as="font" type="font/woff" crossorigin />
+    <link rel="preload" href="/static/fonts/site/Lora-Variable.woff" as="font" type="font/woff" crossorigin />
+
+    <!-- CSS externo (opcional). Se não existir, o bloco <style> abaixo garante o visual. -->
+    <link rel="stylesheet" href="/static/css/main.css?v=p1" />
+
+    
+
+    <!-- Schema.org JSON-LD (Person) -->
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Marlon Myaggy",
+    "jobTitle": "Analista Técnico em Segurança do Trabalho e Desenvolvedor Full Stack",
+    "url": "https://tst-marlonbrito.github.io/",
+    "image": "https://tst-marlonbrito.github.io/static/img/Foto.jpg",
+    "sameAs": [
+      "https://www.linkedin.com/in/marlonmyaggy",
+      "https://github.com/TechAlly96"
+    ]
+  }
+  </script>
+
+    <!-- Fallback de estilos (mantém sua paleta e componentes essenciais) -->
+    <style>
+        :root {
+            --primaria: #003366;
+            --secundaria: #00AEEF;
+            --cinza: #f4f4f4;
+            --preto: #222;
+            --branco: #fff;
+            --sucesso: #dff0d8;
+            --sucesso-texto: #3c763d;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: clamp(15px, 0.6vw + 13px, 19px);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--cinza);
+            color: var(--preto);
+            font-size: 17px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* Acessibilidade */
+        .skip-to-content {
+            position: absolute;
+            left: -9999px;
+            top: auto;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+        }
+
+        .skip-to-content:focus {
+            left: 1rem;
+            top: 1rem;
+            width: auto;
+            height: auto;
+            padding: .5rem .75rem;
+            background: var(--secundaria);
+            color: var(--branco);
+            border-radius: 6px;
+            z-index: 1000;
+        }
+
+        header[role="banner"] {
+            background-color: var(--primaria);
+            padding: 0.5rem 0;
+            color: var(--branco);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, .1);
+        }
+
+        .navbar {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: .4rem;
+            padding: .3rem 0;
+        }
+
+        .brand {
+            color: var(--branco);
+            text-decoration: none;
+            font-size: 1.6rem;
+            font-weight: 700;
+            letter-spacing: .3px;
+        }
+
+        .brand span {
+            color: var(--secundaria);
+        }
+
+        .menu {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.6rem;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+        }
+
+        .menu a {
+            color: var(--branco);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: .95rem;
+            letter-spacing: .3px;
+            padding: .2rem 0;
+            border-bottom: 2px solid transparent;
+            opacity: .9;
+            transition: border-color .3s ease, opacity .3s ease;
+        }
+
+        .menu a:hover,
+        .menu a:focus {
+            border-bottom-color: var(--secundaria);
+            opacity: 1;
+            outline: none;
+        }
+
+        main {
+            padding: 2.5rem 0;
+            min-height: 70vh;
+        }
+
+        .card {
+            background: var(--branco);
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+            transition: transform 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+        }
+
+        .btn-secundaria {
+            background-color: var(--secundaria);
+            color: #fff;
+            padding: .7rem 1.4rem;
+            font-size: 1rem;
+            border: none;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background .3s ease;
+        }
+
+        .btn-secundaria:hover,
+        .btn-secundaria:focus {
+            background-color: #007bbd;
+            outline: none;
+        }
+
+        .flash-msg {
+            background: var(--sucesso);
+            color: var(--sucesso-texto);
+            padding: 1rem;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            background-color: var(--primaria);
+            color: var(--branco);
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: 3rem;
+            font-size: .95rem;
+        }
+
+        footer p {
+            margin: .4rem 0;
+            line-height: 1.4;
+        }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .menu {
+                gap: 1rem;
+            }
+
+            .menu a {
+                font-size: .85rem;
+            }
+
+            .brand {
+                font-size: 1.35rem;
+            }
+        }
+    </style>
+
+    <!-- Identidade premium (verde, dourado e creme): carregada por último, prevalece sobre o restante -->
+    <link rel="stylesheet" href="/static/css/premium.css?v=p1" />
+</head>
+
+<body>
+    <a class="skip-to-content" href="#conteudo">Pular para o conteúdo</a>
+
+    
+    <header role="banner" class="topo">
+        <div class="container navbar" role="navigation" aria-label="principal">
+            <a class="brand" href="/" aria-label="Marlon Myaggy, página inicial">
+                <img class="brand-escudo" src="/static/img/marca/escudo-96.webp" alt="" width="36" height="44">
+                <span class="brand-texto"><span class="brand-nome"><b>Marlon</b> <span>Myaggy</span></span><small>Segurança do Trabalho</small></span>
+            </a>
+            <ul id="menu" class="menu">
+                <li><a href="/" aria-current="page">Início</a></li>
+                <li><a href="/projetos/">Projetos</a></li>
+                <li><a href="/artigos/">Artigos</a></li>
+                <li><a href="/livros/">Livros</a></li>
+                <li><a class="menu-cta" href="/#contato">Contato</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main id="conteudo" class="container" role="main">
+        
+        
+        
+        
+<!-- HERO -->
+<section class="hero hero-premium" aria-labelledby="hero-nome">
+    <span class="moldura-canto c1" aria-hidden="true"></span><span class="moldura-canto c2" aria-hidden="true"></span>
+    <span class="moldura-canto c3" aria-hidden="true"></span><span class="moldura-canto c4" aria-hidden="true"></span>
+    <div class="hero-inner">
+        <div class="hero-texto">
+            <p class="eyebrow">Segurança do Trabalho <span aria-hidden="true">·</span> Desenvolvimento Full Stack</p>
+            <h1 class="title" id="hero-nome">Marlon Brito</h1>
+            <p class="hero-role"><span>Analista Técnico em Segurança do Trabalho</span> <span class="sep" aria-hidden="true">·</span> <span>Desenvolvedor Full Stack especialista em SST</span></p>
+            <p class="subtitle">
+                Segurança, inovação e excelência em código: uno a vivência de campo em mineração e SST ao
+                desenvolvimento de sistemas modernos, que protegem pessoas e simplificam a gestão.
+            </p>
+            <div class="hero-cta">
+                <a class="btn" href="/projetos/">Ver projetos</a>
+                <a class="btn-link" href="/artigos/">Ler os artigos</a>
+                
+            </div>
+        </div>
+
+        <div class="avatar-wrap">
+            <div class="avatar-ring">
+                <img class="avatar" src="/static/img/Foto.jpg?v=633c013711" alt="Foto de Marlon Brito" width="440" height="440">
+            </div>
+            <img class="avatar-selo" src="/static/img/marca/escudo-220.webp" alt="" width="72" height="88">
+        </div>
+    </div>
+</section>
+
+<!-- PILARES -->
+<section class="section pilares" aria-labelledby="pilares-titulo">
+    <header class="secao-cabeca">
+        <p class="eyebrow">O que eu entrego</p>
+        <h2 id="pilares-titulo">Campo, conformidade e tecnologia</h2>
+    </header>
+    <div class="pilares-grade">
+        <article class="pilar">
+            <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 4l16 6v11c0 11-7 19-16 23C15 40 8 32 8 21V10z"/><path d="M17 24l5 5 9-11"/></svg>
+            <h3>Segurança do Trabalho</h3>
+            <p>Vivência de campo em exploração, sondagem e pesquisa mineral, perfuração de poços, mineração e construção civil, com as exigências legais (NRs, PGR/GRO e PCMSO) aplicadas na rotina.</p>
+        </article>
+        <article class="pilar">
+            <svg viewBox="0 0 48 48" aria-hidden="true"><rect x="6" y="9" width="36" height="26" rx="3"/><path d="M17 41h14M24 35v6M14 27l6-6 5 4 9-9"/></svg>
+            <h3>Sistemas sob medida</h3>
+            <p>Coleta de dados em campo com funcionamento offline e evidências fotográficas, fluxos de conformidade por NR com rastreabilidade e painéis analíticos para a tomada de decisão.</p>
+        </article>
+        <article class="pilar">
+            <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 8h22l10 10v22H8z"/><path d="M15 22h18M15 29h18M15 36h11"/></svg>
+            <h3>Conteúdo técnico</h3>
+            <p>Um artigo completo por semana sobre normas, história e gestão de SSMAQ, com referências, para colaboradores, técnicos, engenheiros e empresários, em leitura e em áudio.</p>
+        </article>
+    </div>
+</section>
+
+<!-- SOBRE -->
+<section id="sobre" class="section sobre" aria-labelledby="sobre-titulo">
+    <div class="sobre-grade">
+        <div class="sobre-texto">
+            <p class="eyebrow">Sobre mim</p>
+            <h2 id="sobre-titulo">Do campo ao código</h2>
+            <p>
+                Sou <strong>Marlon Brito</strong>, <strong>Analista Técnico em Segurança do Trabalho</strong> e
+                <strong>Desenvolvedor Full Stack especialista em SST</strong>. Minha trajetória começou no campo, em
+                exploração, sondagem e pesquisa mineral, perfuração de poços, mineração e construção civil, onde aprendi
+                que cada procedimento existe para que alguém volte para casa ao fim do dia. É esse propósito que guia tudo o que faço.
+            </p>
+            <p>
+                Uno duas competências que raramente andam juntas: o domínio técnico das normas
+                (<strong>NRs, PGR/GRO, PCMSO</strong> e sistemas de gestão <strong>ISO 45001, ISO 9001 e ISO 14001</strong>)
+                e a capacidade de transformá-las em <strong>aplicações digitais</strong>. Entrego soluções completas, da
+                <strong>coleta de dados em campo</strong>, com funcionamento offline e evidências fotográficas, aos
+                <strong>fluxos de conformidade</strong> por NR com <strong>rastreabilidade</strong>, passando por
+                <strong>monitoramento operacional</strong> com alertas e <strong>painéis analíticos</strong> para a tomada
+                de decisão. Tudo <strong>auditável desde a concepção</strong>, com histórico de registros, dados íntegros e
+                integração com planilhas e serviços em nuvem.
+            </p>
+            <p>
+                Também compartilho conhecimento: sou autor da coleção anual <strong>Manual Nacional de Conformidade
+                Integrada</strong> e do livro <strong>A Segurança do Trabalho e a Valorização da Vida da Pessoa Humana</strong>,
+                e publico artigos sobre a história e a gestão de SSMAQ. Desenvolvo sistemas sob medida para empresas,
+                equipes técnicas e ONGs. Em resumo: <strong>protejo pessoas com conhecimento técnico e transformo desafios
+                reais em tecnologia eficiente e auditável</strong>.
+            </p>
+            <div class="cta-row">
+                <a class="btn" href="/projetos/">Ver projetos</a>
+                <a class="btn-link" href="/?orcamento=geral#contato">Solicitar orçamento</a>
+            </div>
+        </div>
+        <aside class="credenciais" aria-label="Formação e atuação">
+            <h3>Formação e atuação</h3>
+            <ul>
+                <li><b>Analista Técnico em Segurança do Trabalho</b><span>Campo e gestão de SSMAQ</span></li>
+                <li><b>Bombeiro Civil</b><span>Instrutor de Brigada credenciado pelo CBMMG</span></li>
+                <li><b>Desenvolvedor Full Stack</b><span>Sistemas web, PWA offline e automação em nuvem</span></li>
+                <li><b>Autor</b><span>Coleção anual Manual Nacional de Conformidade Integrada</span></li>
+                <li><b>Sistemas de gestão</b><span>ISO 45001, ISO 9001 e ISO 14001 como referência</span></li>
+            </ul>
+        </aside>
+    </div>
+</section>
+
+
+<!-- CASES EM DESTAQUE -->
+<section class="section destaques" aria-labelledby="destaques-titulo">
+    <header class="secao-cabeca">
+        <p class="eyebrow">Cases em destaque</p>
+        <h2 id="destaques-titulo">Sistemas que resolvem problemas reais</h2>
+    </header>
+    <div class="cards-grade">
+        
+        <article class="card-premium">
+            <a href="/projeto/gestao_sst/">
+                <img src="/static/img/gestao_sst_capa.jpg" alt="" loading="lazy" width="640" height="360">
+                <div class="card-premium-corpo">
+                    <h3>Sistema de Gestão SST</h3>
+                    <p>Gestão de SST híbrida, do escritório ao campo: no celular, offline e com IA. Pronto para mineração, sondagem, pesquisa mineral, construção civil e indústria, e em uso real numa operação de mineração.</p>
+                    <p class="chips"><span>PWA offline</span><span>IA</span><span>React</span></p>
+                    <span class="card-premium-ler">Ver o case →</span>
+                </div>
+            </a>
+        </article>
+        
+        <article class="card-premium">
+            <a href="/projeto/dashboard_3d/">
+                <img src="/static/img/geo_capa.jpg" alt="" loading="lazy" width="640" height="360">
+                <div class="card-premium-corpo">
+                    <h3>Inteligência Geológica</h3>
+                    <p>Case real em pesquisa mineral: laudos XRF viram teor metro a metro, cutoff dinâmico e mapa georreferenciado, em Cumaru do Norte (PA).</p>
+                    <p class="chips"><span>Python</span><span>Dash/Plotly</span><span>Geologia</span></p>
+                    <span class="card-premium-ler">Ver o case →</span>
+                </div>
+            </a>
+        </article>
+        
+        <article class="card-premium">
+            <a href="/projeto/checklist_pwa/">
+                <img src="/static/img/frota_capa.jpg" alt="" loading="lazy" width="640" height="360">
+                <div class="card-premium-corpo">
+                    <h3>Gestão de Frota</h3>
+                    <p>Checklist veicular com foto e GPS + controle de combustível com consumo km/L, alertas e relatórios. Sob medida para a sua empresa.</p>
+                    <p class="chips"><span>PWA offline</span><span>Frota</span><span>Combustível</span></p>
+                    <span class="card-premium-ler">Ver o case →</span>
+                </div>
+            </a>
+        </article>
+        
+    </div>
+    <p class="secao-rodape"><a class="btn-link" href="/projetos/">Todos os projetos</a></p>
+</section>
+
+
+
+<!-- ARTIGOS RECENTES -->
+<section class="section recentes" aria-labelledby="recentes-titulo">
+    <header class="secao-cabeca">
+        <p class="eyebrow">Artigos · toda segunda-feira</p>
+        <h2 id="recentes-titulo">Leitura técnica completa, com áudio</h2>
+        <p>3 artigos publicados sobre história, normas e gestão de segurança do trabalho.</p>
+    </header>
+    <div class="art-feed">
+        
+        
+
+<article class="art-card">
+    <a href="/artigos/historia-03-revolucao-industrial/">
+        
+<div class="art-cover serie-historia">
+    
+    <span class="art-cover-serie">História da Segurança do Trabalho</span>
+    <span class="art-cover-num" aria-hidden="true">03</span>
+    <svg class="art-cover-icone" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        
+        <path d="M18 6h28M18 58h28M21 6c0 14 22 16 22 26S21 44 21 58M43 6c0 14-22 16-22 26s22 12 22 26"/><path d="M26 52h12M28 22h8" opacity=".7"/>
+        
+    </svg>
+    <span class="art-cover-cap">Capítulo 3</span>
+    
+</div>
+
+        <div class="art-card-corpo">
+            <p class="art-card-meta"><time datetime="2026-11-23">23/11/2026</time> · 5 min de leitura</p>
+            <h2>Revolução Industrial: fábricas, crianças e as primeiras leis de proteção</h2>
+            <p class="art-card-resumo">Máquinas a vapor, fábricas lotadas, crianças operando teares por mais de doze horas. Veja como os abusos da Revolução Industrial levaram às primeiras leis de proteção ao trabalho e à criação dos inspetores do trabalho.</p>
+            <span class="art-card-ler">Ler artigo completo →</span>
+        </div>
+    </a>
+</article>
+
+<article class="art-card">
+    <a href="/artigos/historia-02-ramazzini/">
+        
+<div class="art-cover serie-historia">
+    
+    <span class="art-cover-serie">História da Segurança do Trabalho</span>
+    <span class="art-cover-num" aria-hidden="true">02</span>
+    <svg class="art-cover-icone" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        
+        <path d="M18 6h28M18 58h28M21 6c0 14 22 16 22 26S21 44 21 58M43 6c0 14-22 16-22 26s22 12 22 26"/><path d="M26 52h12M28 22h8" opacity=".7"/>
+        
+    </svg>
+    <span class="art-cover-cap">Capítulo 2</span>
+    
+</div>
+
+        <div class="art-card-corpo">
+            <p class="art-card-meta"><time datetime="2026-11-16">16/11/2026</time> · 6 min de leitura</p>
+            <h2>Ramazzini e o nascimento da Medicina do Trabalho</h2>
+            <p class="art-card-resumo">Em 1700, um médico italiano decidiu visitar oficinas, conversar com trabalhadores e fazer uma pergunta que mudaria a medicina: qual é o seu ofício? Conheça Bernardino Ramazzini e o legado que chega até o PCMSO de hoje.</p>
+            <span class="art-card-ler">Ler artigo completo →</span>
+        </div>
+    </a>
+</article>
+
+<article class="art-card">
+    <a href="/artigos/historia-01-minas-da-antiguidade/">
+        
+<div class="art-cover serie-historia">
+    
+    <span class="art-cover-serie">História da Segurança do Trabalho</span>
+    <span class="art-cover-num" aria-hidden="true">01</span>
+    <svg class="art-cover-icone" viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        
+        <path d="M18 6h28M18 58h28M21 6c0 14 22 16 22 26S21 44 21 58M43 6c0 14-22 16-22 26s22 12 22 26"/><path d="M26 52h12M28 22h8" opacity=".7"/>
+        
+    </svg>
+    <span class="art-cover-cap">Capítulo 1</span>
+    
+</div>
+
+        <div class="art-card-corpo">
+            <p class="art-card-meta"><time datetime="2026-11-14">14/11/2026</time> · 6 min de leitura</p>
+            <h2>Das minas da Antiguidade ao Renascimento: os primeiros registros das doenças do trabalho</h2>
+            <p class="art-card-resumo">Plínio, Agricola e Paracelso registraram, séculos antes das normas, que o trabalho nas minas adoecia. Conheça os primeiros passos da proteção ao trabalhador e o que eles ainda ensinam à mineração de hoje.</p>
+            <span class="art-card-ler">Ler artigo completo →</span>
+        </div>
+    </a>
+</article>
+
+
+    </div>
+    <p class="secao-rodape"><a class="btn" href="/artigos/">Ver todos os artigos</a></p>
+</section>
+
+
+<!-- LIVROS -->
+<section id="livros" class="section livros-chamada" aria-labelledby="livros-titulo">
+    <div class="faixa-premium">
+        <div>
+            <p class="eyebrow">Livros</p>
+            <h2 id="livros-titulo">Publicações</h2>
+            <p>Conheça minhas publicações. Clique para ver detalhes ou comprar.</p>
+        </div>
+        <a class="btn" href="/livros/">Abrir catálogo</a>
+    </div>
+</section>
+
+<!-- CONTATO -->
+<section id="contato" class="section contato" aria-labelledby="contato-title">
+    <div class="contato-caixa">
+        <p class="eyebrow">Contato</p>
+        <h2 id="contato-title">Vamos conversar</h2>
+        <p class="contato-intro">Me envie uma mensagem. Respondo o quanto antes.</p>
+
+            <form class="form-contato" method="POST" action="/#contato" novalidate>
+                <!-- Honeypot anti-bot (não preencher) -->
+                <div class="pote-mel" aria-hidden="true">
+                    <label for="website">Não preencha</label>
+                    <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+                </div>
+
+                <div class="campo">
+                    <label for="nome"><strong>Nome</strong></label>
+                    <input id="nome" name="nome" type="text" required autocomplete="name"
+                        placeholder="Seu nome completo">
+                </div>
+
+                <div class="campo">
+                    <label for="email"><strong>E-mail</strong></label>
+                    <input id="email" name="email" type="email" required autocomplete="email"
+                        placeholder="voce@exemplo.com">
+                </div>
+
+                <div class="campo">
+                    <label for="mensagem"><strong>Mensagem</strong></label>
+                    <textarea id="mensagem" name="mensagem" rows="5" required placeholder="Como posso ajudar?"></textarea>
+                </div>
+
+                <div class="acoes">
+                    <button type="submit" class="btn">Enviar mensagem</button>
+                    <a class="btn-link" href="/">Voltar</a>
+                    <small>Seus dados são usados apenas para retorno do contato.</small>
+                </div>
+            </form>
+        </div>
+</section>
+
+
+    </main>
+
+    
+
+    <footer role="contentinfo" class="rodape-site">
+        <div class="container rodape-grade">
+            <div class="rodape-marca">
+                <img src="/static/img/marca/escudo-96.webp" alt="" width="40" height="49" loading="lazy">
+                <p><strong>Marlon <span>Myaggy</span></strong><small>Segurança do Trabalho · Sistemas sob medida</small></p>
+            </div>
+            <nav class="rodape-links" aria-label="Rodapé">
+                <a href="/projetos/">Projetos</a>
+                <a href="/artigos/">Artigos</a>
+                <a href="/livros/">Livros</a>
+                <a href="/?orcamento=geral#contato">Solicitar orçamento</a>
+            </nav>
+            <p class="rodape-chamada">Artigos técnicos toda segunda-feira<small>gratuitos · leitura e áudio no site</small></p>
+        </div>
+        <div class="container rodape-base">
+            <p>© <span id="year"></span> Marlon Myaggy. Todos os direitos reservados.</p>
+            <button type="button" id="btn-instalar" class="btn-instalar" hidden>
+                <img src="/static/icons/icon-192.png" alt="" width="22" height="22"> Instalar app
+            </button>
+        </div>
+    </footer>
+
+    <!-- JS básico para ano no rodapé -->
+    <script>
+        (function () {
+            var y = document.getElementById('year');
+            if (y) y.textContent = new Date().getFullYear();
+        })();
+    </script>
+
+    <!-- PWA: service worker + botão "Instalar app" (só aparece quando o navegador permite) -->
+    <script>
+        (function () {
+            if ('serviceWorker' in navigator) {
+                window.addEventListener('load', function () {
+                    navigator.serviceWorker.register('/sw.js', { scope: '/' }).catch(function () {});
+                });
+            }
+            var pedido = null, btn = document.getElementById('btn-instalar');
+            window.addEventListener('beforeinstallprompt', function (e) {
+                e.preventDefault(); pedido = e; if (btn) btn.hidden = false;
+            });
+            if (btn) btn.addEventListener('click', function () {
+                if (!pedido) return;
+                pedido.prompt();
+                pedido.userChoice.finally(function () { pedido = null; btn.hidden = true; });
+            });
+            window.addEventListener('appinstalled', function () { if (btn) btn.hidden = true; });
+        })();
+    </script>
+    
+<script>window.MM_ESTATICO={"base": "", "form": "", "email": "tst.marlonbrito@gmail.com", "linkedin": "https://www.linkedin.com/in/marlonmyaggy", "orcamentos": {"gestao_sst": "Olá, Marlon! Tenho interesse em um orçamento para: Sistema de Gestão SST.\n\nEmpresa:\nRamo de atividade:\nTamanho (colaboradores ou veículos):\nO que preciso controlar:\nTelefone/WhatsApp:", "checklist_pwa": "Olá, Marlon! Tenho interesse em um orçamento para: Gestão de Frota (checklist veicular + controle de combustível).\n\nEmpresa:\nRamo de atividade:\nTamanho (colaboradores ou veículos):\nO que preciso controlar:\nTelefone/WhatsApp:", "dashboard_3d": "Olá, Marlon! Tenho interesse em um orçamento para: Dashboard de dados geológicos/de campo (Inteligência Geológica).\n\nEmpresa:\nRamo de atividade:\nTamanho (colaboradores ou veículos):\nO que preciso controlar:\nTelefone/WhatsApp:", "sites_ongs": "Olá, Marlon! Tenho interesse em um orçamento para: Site para ONG/associação (portal, loja virtual e doações).\n\nEmpresa:\nRamo de atividade:\nTamanho (colaboradores ou veículos):\nO que preciso controlar:\nTelefone/WhatsApp:", "geral": "Olá, Marlon! Gostaria de um orçamento para um sistema sob medida.\n\nEmpresa:\nO que preciso resolver:\nTelefone/WhatsApp:"}};</script>
+<script src="/static/js/estatico.js?v=1" defer></script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "9190da19987f438aa912c3545b19a63b"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+
+</html>

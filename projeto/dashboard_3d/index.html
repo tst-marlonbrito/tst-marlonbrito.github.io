@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Inteligência Geológica: dashboard de sondagem e teores • Marlon Myaggy</title>
+    <meta name="description"
+        content="Dashboard sob medida para pesquisa mineral: laudos XRF convertidos automaticamente, teor de manganês metro a metro, cutoff dinâmico, comparação por localidade e mapa georreferenciado. Case real em Cumaru do Norte (PA). Solicite um orçamento." />
+    <link rel="canonical" href="https://tst-marlonbrito.github.io/projeto/dashboard_3d/" />
+
+    <!-- Ícones e app instalável (PWA) -->
+    <link rel="icon" href="/static/icons/favicon.ico" sizes="48x48" />
+    <link rel="icon" href="/static/icons/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/static/icons/apple-touch-icon.png" />
+    <link rel="manifest" href="/static/manifest.webmanifest" />
+    <meta name="theme-color" content="#06231b" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Marlon Myaggy" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="application-name" content="Marlon Myaggy" />
+
+    <!-- Social (Open Graph / Twitter) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Marlon Myaggy — Portfólio" />
+    <meta property="og:description"
+        content="Portfólio profissional com entregas reais em SST e desenvolvimento." />
+    <meta property="og:url" content="https://tst-marlonbrito.github.io/projeto/dashboard_3d/" />
+    <meta property="og:image" content="https://tst-marlonbrito.github.io/static/images/og-cover.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Marlon Myaggy — Portfólio" />
+    <meta name="twitter:description"
+        content="Portfólio profissional com entregas reais em SST e desenvolvimento." />
+    <meta name="twitter:image" content="https://tst-marlonbrito.github.io/static/images/og-cover.jpg" />
+
+    <!-- Tipografia própria (Lora + Inter), servida pelo próprio site: rápida e sem depender de terceiros -->
+    <link rel="preload" href="/static/fonts/site/Inter-Regular.woff" as="font" type="font/woff" crossorigin />
+    <link rel="preload" href="/static/fonts/site/Lora-Variable.woff" as="font" type="font/woff" crossorigin />
+
+    <!-- CSS externo (opcional). Se não existir, o bloco <style> abaixo garante o visual. -->
+    <link rel="stylesheet" href="/static/css/main.css?v=p1" />
+
+    
+
+    <!-- Schema.org JSON-LD (Person) -->
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Marlon Myaggy",
+    "jobTitle": "Analista Técnico em Segurança do Trabalho e Desenvolvedor Full Stack",
+    "url": "https://tst-marlonbrito.github.io/",
+    "image": "https://tst-marlonbrito.github.io/static/img/Foto.jpg",
+    "sameAs": [
+      "https://www.linkedin.com/in/marlonmyaggy",
+      "https://github.com/TechAlly96"
+    ]
+  }
+  </script>
+
+    <!-- Fallback de estilos (mantém sua paleta e componentes essenciais) -->
+    <style>
+        :root {
+            --primaria: #003366;
+            --secundaria: #00AEEF;
+            --cinza: #f4f4f4;
+            --preto: #222;
+            --branco: #fff;
+            --sucesso: #dff0d8;
+            --sucesso-texto: #3c763d;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: clamp(15px, 0.6vw + 13px, 19px);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--cinza);
+            color: var(--preto);
+            font-size: 17px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* Acessibilidade */
+        .skip-to-content {
+            position: absolute;
+            left: -9999px;
+            top: auto;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+        }
+
+        .skip-to-content:focus {
+            left: 1rem;
+            top: 1rem;
+            width: auto;
+            height: auto;
+            padding: .5rem .75rem;
+            background: var(--secundaria);
+            color: var(--branco);
+            border-radius: 6px;
+            z-index: 1000;
+        }
+
+        header[role="banner"] {
+            background-color: var(--primaria);
+            padding: 0.5rem 0;
+            color: var(--branco);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, .1);
+        }
+
+        .navbar {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: .4rem;
+            padding: .3rem 0;
+        }
+
+        .brand {
+            color: var(--branco);
+            text-decoration: none;
+            font-size: 1.6rem;
+            font-weight: 700;
+            letter-spacing: .3px;
+        }
+
+        .brand span {
+            color: var(--secundaria);
+        }
+
+        .menu {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.6rem;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+        }
+
+        .menu a {
+            color: var(--branco);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: .95rem;
+            letter-spacing: .3px;
+            padding: .2rem 0;
+            border-bottom: 2px solid transparent;
+            opacity: .9;
+            transition: border-color .3s ease, opacity .3s ease;
+        }
+
+        .menu a:hover,
+        .menu a:focus {
+            border-bottom-color: var(--secundaria);
+            opacity: 1;
+            outline: none;
+        }
+
+        main {
+            padding: 2.5rem 0;
+            min-height: 70vh;
+        }
+
+        .card {
+            background: var(--branco);
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+            transition: transform 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+        }
+
+        .btn-secundaria {
+            background-color: var(--secundaria);
+            color: #fff;
+            padding: .7rem 1.4rem;
+            font-size: 1rem;
+            border: none;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background .3s ease;
+        }
+
+        .btn-secundaria:hover,
+        .btn-secundaria:focus {
+            background-color: #007bbd;
+            outline: none;
+        }
+
+        .flash-msg {
+            background: var(--sucesso);
+            color: var(--sucesso-texto);
+            padding: 1rem;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            background-color: var(--primaria);
+            color: var(--branco);
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: 3rem;
+            font-size: .95rem;
+        }
+
+        footer p {
+            margin: .4rem 0;
+            line-height: 1.4;
+        }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .menu {
+                gap: 1rem;
+            }
+
+            .menu a {
+                font-size: .85rem;
+            }
+
+            .brand {
+                font-size: 1.35rem;
+            }
+        }
+    </style>
+
+    <!-- Identidade premium (verde, dourado e creme): carregada por último, prevalece sobre o restante -->
+    <link rel="stylesheet" href="/static/css/premium.css?v=p1" />
+</head>
+
+<body>
+    <a class="skip-to-content" href="#conteudo">Pular para o conteúdo</a>
+
+    
+    <header role="banner" class="topo">
+        <div class="container navbar" role="navigation" aria-label="principal">
+            <a class="brand" href="/" aria-label="Marlon Myaggy, página inicial">
+                <img class="brand-escudo" src="/static/img/marca/escudo-96.webp" alt="" width="36" height="44">
+                <span class="brand-texto"><span class="brand-nome"><b>Marlon</b> <span>Myaggy</span></span><small>Segurança do Trabalho</small></span>
+            </a>
+            <ul id="menu" class="menu">
+                <li><a href="/">Início</a></li>
+                <li><a href="/projetos/" aria-current="page">Projetos</a></li>
+                <li><a href="/artigos/">Artigos</a></li>
+                <li><a href="/livros/">Livros</a></li>
+                <li><a class="menu-cta" href="/#contato">Contato</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main id="conteudo" class="container" role="main">
+        
+        
+        
+        
+
+<section class="proj-wrap sst-page geo-page">
+    <div class="container">
+
+        <!-- HERO -->
+        <header class="proj-hero card">
+            <div class="proj-media">
+                <img class="proj-cover" src="/static/img/geo_capa.jpg"
+                     alt="Dashboard de análise de manganês com gráfico metro a metro e mapa de pontos de coleta"
+                     width="1600" height="900" loading="eager">
+            </div>
+
+            <div class="proj-head">
+                <span class="sst-eyebrow">Case real · Pesquisa mineral · Cumaru do Norte (PA)</span>
+                <h1 class="proj-title">Inteligência Geológica</h1>
+                <p class="proj-sub">
+                    Um painel feito sob medida para a <strong>equipe de geologia</strong> da Brasil Minerais na fase
+                    de <strong>pesquisa de manganês</strong>. Os laudos do analisador XRF, que chegavam em PDF,
+                    passaram a virar gráficos, comparações e mapa <strong>automaticamente</strong>.
+                </p>
+                <p class="proj-sub">
+                    O geólogo escolhe um furo e vê o teor metro a metro, compara os alvos da pesquisa, testa teores
+                    de corte e localiza cada amostra no mapa, no computador ou no celular, em campo.
+                </p>
+                <div class="cta-row">
+                    <a class="btn" href="/?orcamento=dashboard_3d#contato">Solicitar orçamento</a>
+                    <a class="btn-link" href="/projetos/">⬅ Voltar aos projetos</a>
+                </div>
+            </div>
+        </header>
+
+        <!-- DESTAQUES -->
+        <ul class="sst-stats" aria-label="Destaques do sistema">
+            <li><strong>PDF → dado</strong><span>laudos XRF lidos automaticamente</span></li>
+            <li><strong>8</strong><span>alvos da pesquisa comparados</span></li>
+            <li><strong>6</strong><span>painéis de análise integrados</span></li>
+            <li><strong>Web</strong><span>no escritório e no celular, em campo</span></li>
+        </ul>
+
+        <!-- PROBLEMA → SOLUÇÃO → RESULTADO -->
+        <section class="card sst-case" aria-labelledby="case">
+            <h2 id="case" class="proj-h3">Do laudo ao mapa: o case</h2>
+            <div class="sst-steps">
+                <article>
+                    <h3><span>1</span> Desafio</h3>
+                    <p>Centenas de amostras de sondagem analisadas no XRF portátil, com resultados presos em
+                        arquivos PDF. Comparar furos e localidades exigia digitar e cruzar planilhas à mão,
+                        atrasando as decisões da pesquisa.</p>
+                </article>
+                <article>
+                    <h3><span>2</span> Solução</h3>
+                    <p>Um robô em Python extrai os teores dos laudos e monta uma base única e validada. Sobre ela,
+                        um dashboard web reúne gráficos metro a metro, resumo por localidade, cutoff e mapa
+                        georreferenciado.</p>
+                </article>
+                <article>
+                    <h3><span>3</span> Resultado</h3>
+                    <p>A equipe passou a enxergar onde estão os melhores teores em poucos cliques, com o mesmo
+                        dado no escritório e em campo, e com mais segurança para priorizar os próximos alvos.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- FLUXO DO DADO -->
+        <section class="card" style="margin-top:1rem" aria-labelledby="fluxo">
+            <h2 id="fluxo" class="proj-h3">Como o dado flui</h2>
+            <ol class="ongs-passos">
+                <li><b>Laudo XRF</b> O analisador portátil gera os resultados de cada amostra em PDF.</li>
+                <li><b>Extração automática</b> Um script em Python lê os PDFs e separa os teores por elemento.</li>
+                <li><b>Base validada</b> Furo, profundidade, localidade, coordenadas, Mn, Fe e relação Mn/Fe organizados.</li>
+                <li><b>Dashboard</b> Gráficos, cutoff e mapa atualizados a partir da mesma base.</li>
+            </ol>
+        </section>
+
+        <!-- PAINÉIS -->
+        <section class="card" style="margin-top:1rem" aria-labelledby="paineis">
+            <h2 id="paineis" class="proj-h3">Os painéis do sistema</h2>
+            <div class="gallery-grid gallery-full">
+                <img src="/static/img/geo_tela1.jpg" alt="Gráfico de barras com teor de manganês metro a metro de um furo" width="1000" height="1100" loading="lazy">
+                <img src="/static/img/geo_tela2.jpg" alt="Gráfico de pizza com resumo por localidade" width="1000" height="1100" loading="lazy">
+                <img src="/static/img/geo_tela3.jpg" alt="Histograma da distribuição de teores de manganês" width="1000" height="1100" loading="lazy">
+                <img src="/static/img/geo_tela4.jpg" alt="Resumo por localidade após aplicar o teor de corte" width="1000" height="1100" loading="lazy">
+                <img src="/static/img/geo_tela5.jpg" alt="Mapa com todos os pontos de coleta de amostras" width="1000" height="1100" loading="lazy">
+                <img src="/static/img/geo_tela6.jpg" alt="Ficha da amostra com tipo de solo, cor e teores de ferro e manganês" width="1000" height="1100" loading="lazy">
+            </div>
+        </section>
+
+        <!-- O QUE FAZ + PARA QUEM -->
+        <div class="proj-grid-2" style="margin-top:1rem">
+            <article class="card" aria-labelledby="func">
+                <h2 id="func" class="proj-h3">O que o geólogo consegue fazer</h2>
+                <ul class="sst-features">
+                    <li><b>Teor metro a metro</b>: escolhe o furo e vê o perfil de manganês por profundidade, com cores por faixa de teor.</li>
+                    <li><b>Comparar localidades</b>: média de Mn por alvo da pesquisa em um único gráfico.</li>
+                    <li><b>Distribuição de teores</b>: histograma de todas as amostras para entender o depósito.</li>
+                    <li><b>Cutoff dinâmico</b>: digita o teor de corte e vê na hora quantas amostras ficam, com média, máximo, mínimo, Fe e Mn/Fe.</li>
+                    <li><b>Mapa de coleta</b>: todos os pontos georreferenciados sobre o mapa, com zoom.</li>
+                    <li><b>Ficha da amostra</b>: um toque no ponto mostra ID, tipo de solo, cor, Fe e Mn.</li>
+                </ul>
+            </article>
+
+            <aside class="card" aria-labelledby="quem">
+                <h2 id="quem" class="proj-h3">Pode ser adaptado para</h2>
+                <p class="chips">
+                    <span>⛏️ Mineradoras em pesquisa</span>
+                    <span>🧭 Consultorias geológicas</span>
+                    <span>🛠️ Empresas de sondagem</span>
+                    <span>🧪 Laboratórios</span>
+                    <span>🌱 Análise de solo e agro</span>
+                    <span>🌊 Monitoramento ambiental</span>
+                </p>
+                <p class="ongs-intro" style="margin-top:.75rem">Outros elementos (Fe, Cu, Au, Ni, P...), outros
+                    equipamentos e outros formatos de laudo podem ser incorporados.</p>
+
+                <h2 class="proj-h3" style="margin-top:1rem">Especificações</h2>
+                <dl class="specs-grid">
+                    <dt>Linguagem</dt>
+                    <dd>Python</dd>
+                    <dt>Dashboard</dt>
+                    <dd>Dash e Plotly</dd>
+                    <dt>Mapa</dt>
+                    <dd>Leaflet com OpenStreetMap</dd>
+                    <dt>Entrada</dt>
+                    <dd>Laudos em PDF do XRF e planilhas Excel</dd>
+                </dl>
+            </aside>
+        </div>
+
+        <!-- CTA FINAL -->
+        <section class="card sst-cta">
+            <h2>Seus dados de campo estão presos em PDFs e planilhas?</h2>
+            <p>Conte como sua equipe coleta e analisa as amostras. Eu monto um painel sob medida e envio um orçamento sem compromisso.</p>
+            <div class="cta-row" style="justify-content:center">
+                <a class="btn" href="/?orcamento=dashboard_3d#contato">Solicitar orçamento</a>
+                <a class="btn-link" href="/projetos/">⬅ Voltar aos projetos</a>
+            </div>
+        </section>
+
+    </div>
+</section>
+
+    </main>
+
+    
+
+    <footer role="contentinfo" class="rodape-site">
+        <div class="container rodape-grade">
+            <div class="rodape-marca">
+                <img src="/static/img/marca/escudo-96.webp" alt="" width="40" height="49" loading="lazy">
+                <p><strong>Marlon <span>Myaggy</span></strong><small>Segurança do Trabalho · Sistemas sob medida</small></p>
+            </div>
+            <nav class="rodape-links" aria-label="Rodapé">
+                <a href="/projetos/">Projetos</a>
+                <a href="/artigos/">Artigos</a>
+                <a href="/livros/">Livros</a>
+                <a href="/?orcamento=geral#contato">Solicitar orçamento</a>
+            </nav>
+            <p class="rodape-chamada">Artigos técnicos toda segunda-feira<small>gratuitos · leitura e áudio no site</small></p>
+        </div>
+        <div class="container rodape-base">
+            <p>© <span id="year"></span> Marlon Myaggy. Todos os direitos reservados.</p>
+            <button type="button" id="btn-instalar" class="btn-instalar" hidden>
+                <img src="/static/icons/icon-192.png" alt="" width="22" height="22"> Instalar app
+            </button>
+        </div>
+    </footer>
+
+    <!-- JS básico para ano no rodapé -->
+    <script>
+        (function () {
+            var y = document.getElementById('year');
+            if (y) y.textContent = new Date().getFullYear();
+        })();
+    </script>
+
+    <!-- PWA: service worker + botão "Instalar app" (só aparece quando o navegador permite) -->
+    <script>
+        (function () {
+            if ('serviceWorker' in navigator) {
+                window.addEventListener('load', function () {
+                    navigator.serviceWorker.register('/sw.js', { scope: '/' }).catch(function () {});
+                });
+            }
+            var pedido = null, btn = document.getElementById('btn-instalar');
+            window.addEventListener('beforeinstallprompt', function (e) {
+                e.preventDefault(); pedido = e; if (btn) btn.hidden = false;
+            });
+            if (btn) btn.addEventListener('click', function () {
+                if (!pedido) return;
+                pedido.prompt();
+                pedido.userChoice.finally(function () { pedido = null; btn.hidden = true; });
+            });
+            window.addEventListener('appinstalled', function () { if (btn) btn.hidden = true; });
+        })();
+    </script>
+    
+<script>window.MM_ESTATICO={"base": "", "form": "", "email": "tst.marlonbrito@gmail.com", "linkedin": "https://www.linkedin.com/in/marlonmyaggy", "orcamentos": {"gestao_sst": "Olá, Marlon! Tenho interesse em um orçamento para: Sistema de Gestão SST.\n\nEmpresa:\nRamo de atividade:\nTamanho (colaboradores ou veículos):\nO que preciso controlar:\nTelefone/WhatsApp:", "checklist_pwa": "Olá, Marlon! Tenho interesse em um orçamento para: Gestão de Frota (checklist veicular + controle de combustível).\n\nEmpresa:\nRamo de atividade:\nTamanho (colaboradores ou veículos):\nO que preciso controlar:\nTelefone/WhatsApp:", "dashboard_3d": "Olá, Marlon! Tenho interesse em um orçamento para: Dashboard de dados geológicos/de campo (Inteligência Geológica).\n\nEmpresa:\nRamo de atividade:\nTamanho (colaboradores ou veículos):\nO que preciso controlar:\nTelefone/WhatsApp:", "sites_ongs": "Olá, Marlon! Tenho interesse em um orçamento para: Site para ONG/associação (portal, loja virtual e doações).\n\nEmpresa:\nRamo de atividade:\nTamanho (colaboradores ou veículos):\nO que preciso controlar:\nTelefone/WhatsApp:", "geral": "Olá, Marlon! Gostaria de um orçamento para um sistema sob medida.\n\nEmpresa:\nO que preciso resolver:\nTelefone/WhatsApp:"}};</script>
+<script src="/static/js/estatico.js?v=1" defer></script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "9190da19987f438aa912c3545b19a63b"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+
+</html>

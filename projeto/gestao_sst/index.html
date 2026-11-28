@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Sistema de Gestão SST • Marlon Myaggy</title>
+    <meta name="description"
+        content="Sistema de Gestão de SST híbrido, para o escritório e o campo: offline-first, com Assistente de IA, pronto para mineração, sondagem, pesquisa mineral, construção civil e indústria. Em produção." />
+    <link rel="canonical" href="https://tst-marlonbrito.github.io/projeto/gestao_sst/" />
+
+    <!-- Ícones e app instalável (PWA) -->
+    <link rel="icon" href="/static/icons/favicon.ico" sizes="48x48" />
+    <link rel="icon" href="/static/icons/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/static/icons/apple-touch-icon.png" />
+    <link rel="manifest" href="/static/manifest.webmanifest" />
+    <meta name="theme-color" content="#06231b" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Marlon Myaggy" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="application-name" content="Marlon Myaggy" />
+
+    <!-- Social (Open Graph / Twitter) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Marlon Myaggy — Portfólio" />
+    <meta property="og:description"
+        content="Portfólio profissional com entregas reais em SST e desenvolvimento." />
+    <meta property="og:url" content="https://tst-marlonbrito.github.io/projeto/gestao_sst/" />
+    <meta property="og:image" content="https://tst-marlonbrito.github.io/static/images/og-cover.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Marlon Myaggy — Portfólio" />
+    <meta name="twitter:description"
+        content="Portfólio profissional com entregas reais em SST e desenvolvimento." />
+    <meta name="twitter:image" content="https://tst-marlonbrito.github.io/static/images/og-cover.jpg" />
+
+    <!-- Tipografia própria (Lora + Inter), servida pelo próprio site: rápida e sem depender de terceiros -->
+    <link rel="preload" href="/static/fonts/site/Inter-Regular.woff" as="font" type="font/woff" crossorigin />
+    <link rel="preload" href="/static/fonts/site/Lora-Variable.woff" as="font" type="font/woff" crossorigin />
+
+    <!-- CSS externo (opcional). Se não existir, o bloco <style> abaixo garante o visual. -->
+    <link rel="stylesheet" href="/static/css/main.css?v=p1" />
+
+    
+
+    <!-- Schema.org JSON-LD (Person) -->
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Marlon Myaggy",
+    "jobTitle": "Analista Técnico em Segurança do Trabalho e Desenvolvedor Full Stack",
+    "url": "https://tst-marlonbrito.github.io/",
+    "image": "https://tst-marlonbrito.github.io/static/img/Foto.jpg",
+    "sameAs": [
+      "https://www.linkedin.com/in/marlonmyaggy",
+      "https://github.com/TechAlly96"
+    ]
+  }
+  </script>
+
+    <!-- Fallback de estilos (mantém sua paleta e componentes essenciais) -->
+    <style>
+        :root {
+            --primaria: #003366;
+            --secundaria: #00AEEF;
+            --cinza: #f4f4f4;
+            --preto: #222;
+            --branco: #fff;
+            --sucesso: #dff0d8;
+            --sucesso-texto: #3c763d;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: clamp(15px, 0.6vw + 13px, 19px);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--cinza);
+            color: var(--preto);
+            font-size: 17px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* Acessibilidade */
+        .skip-to-content {
+            position: absolute;
+            left: -9999px;
+            top: auto;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+        }
+
+        .skip-to-content:focus {
+            left: 1rem;
+            top: 1rem;
+            width: auto;
+            height: auto;
+            padding: .5rem .75rem;
+            background: var(--secundaria);
+            color: var(--branco);
+            border-radius: 6px;
+            z-index: 1000;
+        }
+
+        header[role="banner"] {
+            background-color: var(--primaria);
+            padding: 0.5rem 0;
+            color: var(--branco);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, .1);
+        }
+
+        .navbar {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: .4rem;
+            padding: .3rem 0;
+        }
+
+        .brand {
+            color: var(--branco);
+            text-decoration: none;
+            font-size: 1.6rem;
+            font-weight: 700;
+            letter-spacing: .3px;
+        }
+
+        .brand span {
+            color: var(--secundaria);
+        }
+
+        .menu {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.6rem;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+        }
+
+        .menu a {
+            color: var(--branco);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: .95rem;
+            letter-spacing: .3px;
+            padding: .2rem 0;
+            border-bottom: 2px solid transparent;
+            opacity: .9;
+            transition: border-color .3s ease, opacity .3s ease;
+        }
+
+        .menu a:hover,
+        .menu a:focus {
+            border-bottom-color: var(--secundaria);
+            opacity: 1;
+            outline: none;
+        }
+
+        main {
+            padding: 2.5rem 0;
+            min-height: 70vh;
+        }
+
+        .card {
+            background: var(--branco);
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+            transition: transform 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+        }
+
+        .btn-secundaria {
+            background-color: var(--secundaria);
+            color: #fff;
+            padding: .7rem 1.4rem;
+            font-size: 1rem;
+            border: none;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background .3s ease;
+        }
+
+        .btn-secundaria:hover,
+        .btn-secundaria:focus {
+            background-color: #007bbd;
+            outline: none;
+        }
+
+        .flash-msg {
+            background: var(--sucesso);
+            color: var(--sucesso-texto);
+            padding: 1rem;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            background-color: var(--primaria);
+            color: var(--branco);
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: 3rem;
+            font-size: .95rem;
+        }
+
+        footer p {
+            margin: .4rem 0;
+            line-height: 1.4;
+        }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .menu {
+                gap: 1rem;
+            }
+
+            .menu a {
+                font-size: .85rem;
+            }
+
+            .brand {
+                font-size: 1.35rem;
+            }
+        }
+    </style>
+
+    <!-- Identidade premium (verde, dourado e creme): carregada por último, prevalece sobre o restante -->
+    <link rel="stylesheet" href="/static/css/premium.css?v=p1" />
+</head>
+
+<body>
+    <a class="skip-to-content" href="#conteudo">Pular para o conteúdo</a>
+
+    
+    <header role="banner" class="topo">
+        <div class="container navbar" role="navigation" aria-label="principal">
+            <a class="brand" href="/" aria-label="Marlon Myaggy, página inicial">
+                <img class="brand-escudo" src="/static/img/marca/escudo-96.webp" alt="" width="36" height="44">
+                <span class="brand-texto"><span class="brand-nome"><b>Marlon</b> <span>Myaggy</span></span><small>Segurança do Trabalho</small></span>
+            </a>
+            <ul id="menu" class="menu">
+                <li><a href="/">Início</a></li>
+                <li><a href="/projetos/" aria-current="page">Projetos</a></li>
+                <li><a href="/artigos/">Artigos</a></li>
+                <li><a href="/livros/">Livros</a></li>
+                <li><a class="menu-cta" href="/#contato">Contato</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main id="conteudo" class="container" role="main">
+        
+        
+        
+        
+
+<section class="proj-wrap sst-page">
+    <div class="container">
+
+        <!-- HERO -->
+        <header class="proj-hero card">
+            <div class="proj-media">
+                <img class="proj-cover" src="/static/img/gestao_sst_capa.jpg"
+                     alt="Sistema de Gestão SST rodando no celular: painel de indicadores, escala de turno e emociograma"
+                     width="1600" height="900" loading="eager">
+            </div>
+
+            <div class="proj-head">
+                <span class="sst-eyebrow">Gestão de SST · Escritório e campo</span>
+                <h1 class="proj-title">Sistema de Gestão SST</h1>
+                <p class="proj-sub">
+                    A rotina inteira do Técnico de Segurança do Trabalho <strong>no bolso</strong>: DDS, EPI, inspeções,
+                    treinamentos e relatórios, funcionando <strong>mesmo sem sinal de internet</strong> e com um
+                    <strong>Assistente de IA</strong> que responde perguntas sobre os dados da operação.
+                </p>
+                <p class="proj-sub">
+                    Feito para a <strong>gestão de SST híbrida</strong>: o técnico registra tudo no <strong>campo</strong>,
+                    onde a atividade acontece, e a gestão acompanha do <strong>escritório</strong>, com painéis e relatórios
+                    prontos. Em produção numa operação de mineração com turnos de 12 horas e preparado para
+                    <strong>sondagem, pesquisa mineral, construção civil e indústria</strong>.
+                </p>
+                <div class="cta-row">
+                    <a class="btn" href="/?orcamento=gestao_sst#contato">Solicitar orçamento</a>
+                </div>
+            </div>
+        </header>
+
+        <!-- NÚMEROS -->
+        <ul class="sst-stats" aria-label="Destaques do sistema">
+            <li><strong>100%</strong><span>offline, sincroniza sozinho</span></li>
+            <li><strong>20+</strong><span>módulos de SST</span></li>
+            <li><strong>19</strong><span>categorias de inspeção com normas</span></li>
+            <li><strong>IA</strong><span>assistente sobre os dados reais</span></li>
+        </ul>
+
+        <!-- CAMPO E ESCRITÓRIO -->
+        <section class="card sst-case" aria-labelledby="case">
+            <div class="sst-case-head">
+                <img src="/static/img/gestao_sst.png" alt=""
+                     width="96" height="96" loading="lazy">
+                <div>
+                    <span class="sst-eyebrow">Em produção · uso diário</span>
+                    <h2 id="case" class="proj-h3">Campo e escritório conectados, mesmo onde o sinal não chega</h2>
+                </div>
+            </div>
+
+            <div class="sst-steps">
+                <article>
+                    <h3><span>1</span> Problema</h3>
+                    <p>Equipes em turnos de 12 horas, dia e noite, em cavas, furos de sondagem, canteiros e plantas
+                        industriais onde o sinal de internet falha. Registros em papel e planilhas espalhadas, evidências
+                        difíceis de achar na hora da auditoria e um relatório mensal que consumia horas de montagem manual
+                        no escritório.</p>
+                </article>
+                <article>
+                    <h3><span>2</span> Solução</h3>
+                    <p>Um aplicativo instalável no celular (PWA) que grava tudo no próprio aparelho e sincroniza
+                        quando a conexão volta. Cada atividade do técnico virou um módulo digital, com assinatura,
+                        foto, norma de referência e histórico por colaborador.</p>
+                </article>
+                <article>
+                    <h3><span>3</span> Impacto</h3>
+                    <p>Registro feito no local, no momento em que acontece. O escritório enxerga as evidências organizadas
+                        e rastreáveis, e o <strong>Relatório Gerencial Mensal</strong> sai automaticamente, com gráficos,
+                        análise e plano de ação para a gestão e para o cliente da operação.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- SETORES -->
+        <section class="card sst-case" aria-labelledby="setores">
+            <h2 id="setores" class="proj-h3">Pronto para a realidade de cada setor</h2>
+            <div class="sst-steps sst-setores">
+                <article>
+                    <h3>⛏️ Mineração</h3>
+                    <p>Inspeções de frentes de lavra, pátios e equipamentos móveis, checklist veicular, controle de
+                        fadiga e emociograma antes do turno, DDS e evidências para auditorias de clientes e do governo.</p>
+                </article>
+                <article>
+                    <h3>🧭 Sondagem e pesquisa mineral</h3>
+                    <p>Equipes pequenas e itinerantes em áreas remotas: registros offline, inspeção de sondas e
+                        acampamentos, deslocamentos, permissões de trabalho e treinamentos acompanhados à distância.</p>
+                </article>
+                <article>
+                    <h3>🏗️ Construção civil</h3>
+                    <p>Inspeções por frente de obra com base nas NRs, EPI por colaborador, trabalho em altura,
+                        integração de terceiros e CIPA digital, com o histórico de cada canteiro na mão do engenheiro.</p>
+                </article>
+                <article>
+                    <h3>🏭 Indústria</h3>
+                    <p>Rotinas de inspeção de máquinas e áreas, treinamentos com certificado e matriz anual,
+                        indicadores por setor e turno e relatórios gerenciais prontos para a liderança.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- FUNCIONALIDADES + ESPECIFICAÇÕES -->
+        <div class="proj-grid-2" style="margin-top:1rem">
+            <article class="card" aria-labelledby="func">
+                <h2 id="func" class="proj-h3">O que o sistema faz</h2>
+                <ul class="sst-features">
+                    <li><b>📋 DDS e inspeções</b> em 19 categorias, com NR/NBR de referência e explicação automática de cada item.</li>
+                    <li><b>🦺 EPI completo</b>: requisição, entrega confirmada pelo almoxarifado e ficha por colaborador.</li>
+                    <li><b>🎓 Treinamentos</b> com vídeo, prova corrigida automaticamente, certificado em PDF com QR Code e matriz anual.</li>
+                    <li><b>📊 Relatório Gerencial Mensal</b> pronto para o cliente, com texto analítico, gráficos e plano de ação.</li>
+                    <li><b>😊 Emociograma e fadiga</b> para acompanhar o bem-estar da equipe antes do início do turno.</li>
+                    <li><b>🗳️ CIPA digital</b>: eleição ponta a ponta, documentos legais e curso NR-5.</li>
+                    <li><b>👥 Portal do Colaborador</b>: escala de turno, documentos, certificados e avaliação do técnico.</li>
+                    <li><b>🤖 Assistente de IA</b> com mais de 20 ferramentas de consulta em linguagem natural sobre inspeções, treinamentos, EPI e ocorrências.</li>
+                    <li><b>🔒 Multiusuário</b> com isolamento total de dados entre equipes (Row Level Security).</li>
+                </ul>
+            </article>
+
+            <aside class="card" aria-labelledby="especificacoes">
+                <h2 id="especificacoes" class="proj-h3">Especificações</h2>
+                <dl class="specs-grid">
+                    <dt>Arquitetura</dt>
+                    <dd>PWA offline-first, instalável no celular</dd>
+                    <dt>Tecnologias</dt>
+                    <dd>React, TypeScript, Tailwind CSS, Dexie.js (IndexedDB), Supabase</dd>
+                    <dt>IA</dt>
+                    <dd>Assistente operacional com <em>function calling</em> sobre os dados reais</dd>
+                    <dt>Modelo de uso</dt>
+                    <dd>Híbrido: registro no campo pelo celular, gestão no escritório com painéis e relatórios</dd>
+                    <dt>Status</dt>
+                    <dd>Em produção, uso diário em operação de mineração</dd>
+                </dl>
+
+                <h2 class="proj-h3" style="margin-top:1rem">Pode ser adaptado para</h2>
+                <p class="chips">
+                    <span>⛏️ Mineração</span>
+                    <span>🧭 Sondagem</span>
+                    <span>🔬 Pesquisa mineral</span>
+                    <span>🏗️ Construção civil</span>
+                    <span>🏭 Indústria</span>
+                    <span>⚡ Energia</span>
+                    <span>🚛 Transporte e logística</span>
+                </p>
+            </aside>
+        </div>
+
+        <!-- GALERIA -->
+        <section class="card" style="margin-top:1rem" aria-labelledby="galeria">
+            <h2 id="galeria" class="proj-h3">Telas do sistema em uso</h2>
+            <div class="gallery-grid gallery-full">
+                <img src="/static/img/gestao_sst_tela1.jpg" alt="Painel de indicadores do mês: DDS, inspeções, treinamentos e blitz" width="1000" height="1100" loading="lazy">
+                <img src="/static/img/gestao_sst_tela2.jpg" alt="Calendário de escala de turno do colaborador" width="1000" height="1100" loading="lazy">
+                <img src="/static/img/gestao_sst_tela3.jpg" alt="Emociograma da equipe e status das tarefas do mês" width="1000" height="1100" loading="lazy">
+            </div>
+        </section>
+
+        <!-- CTA FINAL -->
+        <section class="card sst-cta">
+            <h2>Sua operação ainda controla SST no papel?</h2>
+            <p>Conte como funciona a sua operação: adapto os módulos à realidade da sua mina, sondagem, obra ou planta industrial, apresento o sistema funcionando e envio um orçamento sem compromisso.</p>
+            <div class="cta-row" style="justify-content:center">
+                <a class="btn" href="/?orcamento=gestao_sst#contato">Solicitar orçamento</a>
+                <a class="btn-link" href="/projetos/">⬅ Voltar aos projetos</a>
+            </div>
+        </section>
+
+    </div>
+</section>
+
+    </main>
+
+    
+
+    <footer role="contentinfo" class="rodape-site">
+        <div class="container rodape-grade">
+            <div class="rodape-marca">
+                <img src="/static/img/marca/escudo-96.webp" alt="" width="40" height="49" loading="lazy">
+                <p><strong>Marlon <span>Myaggy</span></strong><small>Segurança do Trabalho · Sistemas sob medida</small></p>
+            </div>
+            <nav class="rodape-links" aria-label="Rodapé">
+                <a href="/projetos/">Projetos</a>
+                <a href="/artigos/">Artigos</a>
+                <a href="/livros/">Livros</a>
+                <a href="/?orcamento=geral#contato">Solicitar orçamento</a>
+            </nav>
+            <p class="rodape-chamada">Artigos técnicos toda segunda-feira<small>gratuitos · leitura e áudio no site</small></p>
+        </div>
+        <div class="container rodape-base">
+            <p>© <span id="year"></span> Marlon Myaggy. Todos os direitos reservados.</p>
+            <button type="button" id="btn-instalar" class="btn-instalar" hidden>
+                <img src="/static/icons/icon-192.png" alt="" width="22" height="22"> Instalar app
+            </button>
+        </div>
+    </footer>
+
+    <!-- JS básico para ano no rodapé -->
+    <script>
+        (function () {
+            var y = document.getElementById('year');
+            if (y) y.textContent = new Date().getFullYear();
+        })();
+    </script>
+
+    <!-- PWA: service worker + botão "Instalar app" (só aparece quando o navegador permite) -->
+    <script>
+        (function () {
+            if ('serviceWorker' in navigator) {
+                window.addEventListener('load', function () {
+                    navigator.serviceWorker.register('/sw.js', { scope: '/' }).catch(function () {});
+                });
+            }
+            var pedido = null, btn = document.getElementById('btn-instalar');
+            window.addEventListener('beforeinstallprompt', function (e) {
+                e.preventDefault(); pedido = e; if (btn) btn.hidden = false;
+            });
+            if (btn) btn.addEventListener('click', function () {
+                if (!pedido) return;
+                pedido.prompt();
+                pedido.userChoice.finally(function () { pedido = null; btn.hidden = true; });
+            });
+            window.addEventListener('appinstalled', function () { if (btn) btn.hidden = true; });
+        })();
+    </script>
+    
+<script>window.MM_ESTATICO={"base": "", "form": "", "email": "tst.marlonbrito@gmail.com", "linkedin": "https://www.linkedin.com/in/marlonmyaggy", "orcamentos": {"gestao_sst": "Olá, Marlon! Tenho interesse em um orçamento para: Sistema de Gestão SST.\n\nEmpresa:\nRamo de atividade:\nTamanho (colaboradores ou veículos):\nO que preciso controlar:\nTelefone/WhatsApp:", "checklist_pwa": "Olá, Marlon! Tenho interesse em um orçamento para: Gestão de Frota (checklist veicular + controle de combustível).\n\nEmpresa:\nRamo de atividade:\nTamanho (colaboradores ou veículos):\nO que preciso controlar:\nTelefone/WhatsApp:", "dashboard_3d": "Olá, Marlon! Tenho interesse em um orçamento para: Dashboard de dados geológicos/de campo (Inteligência Geológica).\n\nEmpresa:\nRamo de atividade:\nTamanho (colaboradores ou veículos):\nO que preciso controlar:\nTelefone/WhatsApp:", "sites_ongs": "Olá, Marlon! Tenho interesse em um orçamento para: Site para ONG/associação (portal, loja virtual e doações).\n\nEmpresa:\nRamo de atividade:\nTamanho (colaboradores ou veículos):\nO que preciso controlar:\nTelefone/WhatsApp:", "geral": "Olá, Marlon! Gostaria de um orçamento para um sistema sob medida.\n\nEmpresa:\nO que preciso resolver:\nTelefone/WhatsApp:"}};</script>
+<script src="/static/js/estatico.js?v=1" defer></script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "9190da19987f438aa912c3545b19a63b"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+
+</html>
